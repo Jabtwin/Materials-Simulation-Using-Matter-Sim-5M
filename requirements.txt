@@ -1,0 +1,9 @@
+numpy
+matplotlib
+ase
+phonopy
+torch
+loguru
+customtkinter
+pillow
+mattersim

@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Tests and outputs
+test_*.py
+phonon_test_*/
+phonon_*_molecule/
+phonon_*_bcc/
+phonon_*_fcc/
+phonon_*_hcp/
+phonon_*_diamond/
+phonon_*_sc/
+vib*/
+comprehensive_report*.md
+*.log
+*.png
+*.pdf
+
+# Environment and IDE
+.venv/
+env/
+venv/
+.vscode/
+.idea/
+.antigravity*
+.gemini*
+Gemini_Verification_Data/
+
+# Specific scripts not meant for production
+export_for_gemini.py
+find_vietnamese.py
+fix_translations.py
+patch*.py
+fix.py
+
+# Models
+*.pth
