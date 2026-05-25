@@ -19,6 +19,17 @@
   * **Compounds**: Build and simulate crystal compounds using chemical formulas (e.g., NaCl, GaAs).
 * **Modern & Responsive UI**: Features a sleek, dark-mode GUI built with CustomTkinter, complete with intuitive emojis, real-time Matplotlib plots, progress tracking, and multi-threaded background execution to keep the interface responsive during heavy computations.
 
+## 📸 Screenshots & Previews
+
+Here are some examples of the analysis and UI produced by MatterSim AI Materials Lab:
+
+<div align="center">
+  <img src="images/fe_bcc_eos.png" width="45%" alt="Equation of State">
+  <img src="images/fe_bcc_phonon.png" width="45%" alt="Phonon Analysis">
+  <br>
+  <img src="images/fe_bcc_mole.png" width="60%" alt="Molecular Dynamics">
+</div>
+
 ## 🚀 Getting Started
 
 ### Prerequisites
