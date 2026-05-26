@@ -12,6 +12,9 @@ if %errorLevel% neq 0 (
     exit /b
 )
 
+:: Change directory to the current script path (crucial for elevated cmd)
+cd /d "%~dp0"
+
 echo ====================================================================
 echo                 MATTERSIM APPLICATION ENVIRONMENT SETUP
 echo ====================================================================
