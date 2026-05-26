@@ -64,7 +64,7 @@ exit /b
 
 :python_found
 
-for /f "tokens=* trims=" %%i in ('%PYTHON_CMD% -c "import sys; print(f'{sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}')"') do set "PY_VER=%%i"
+for /f "tokens=*" %%i in ('%PYTHON_CMD% -c "import sys; v=sys.version_info; print(str(v.major)+'.'+str(v.minor)+'.'+str(v.micro))"') do set "PY_VER=%%i"
 color 0B
 echo [OK] Python detected! (Version: %PY_VER%)
 echo.
@@ -82,7 +82,7 @@ if "%MSVC_FOUND%"=="0" (
     echo C++ Build Tools not found. Downloading installer...
     curl -L -o vs_buildtools.exe https://aka.ms/vs/17/release/vs_buildtools.exe
     if exist vs_buildtools.exe (
-        echo Installing C++ Build Tools (This will take 5-10 minutes)...
+        echo Installing C++ Build Tools - This will take 5-10 minutes...
         echo Please wait, downloading and installing in background...
         start /wait vs_buildtools.exe --quiet --wait --norestart --nocache --installPath "%ProgramFiles(x86)%\Microsoft Visual Studio\2022\BuildTools" --add Microsoft.VisualStudio.Workload.VCTools --includeRecommended
         del vs_buildtools.exe
@@ -105,7 +105,7 @@ echo [1/2] Upgrading pip...
 
 echo.
 echo [2/2] Installing machine learning and GUI dependencies...
-echo (This may take 2-5 minutes depending on your network speed as PyTorch and MatterSim are large packages)
+echo Note: This may take 2-5 minutes depending on your network speed as PyTorch and MatterSim are large packages.
 echo.
 %PYTHON_CMD% -m pip install -r requirements.txt
 
