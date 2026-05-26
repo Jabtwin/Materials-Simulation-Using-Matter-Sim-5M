@@ -1,0 +1,135 @@
+﻿import os
+import glob
+import re
+
+replacements = {
+    r"BÆ°á»›c quan trá»ng: Tá»‘i Æ°u hÃ³a toÃ n bá»™ cáº¥u trÃºc \(cáº£ a vÃ  c cho HCP\) táº¡i P=0 trÆ°á»›c khi quÃ©t": "Important step: Optimize the entire structure (both a and c for HCP) at P=0 before scanning",
+    r"This ensures the c/a ratio is most accurate and the E-V curve will be absolutely smooth.": "This ensures the c/a ratio is most accurate and the E-V curve will be absolutely smooth.",
+    r"QuÃ©t thá»ƒ tÃ­ch Ä‘áº³ng hÆ°á»›ng \(Isotropic Scaling\)": "Isotropic volume scanning (Isotropic Scaling)",
+    r"Bá»Ž BÆ¯á»šC RELAX BÃŠN TRONG VÃ’NG Láº¶P Äá»‚ TRÃNH NHIá»„U \(NOISE\) CHO HÃ€M FIT": "SKIP RELAXATION INSIDE THE LOOP TO AVOID NOISE FOR FITTING FUNCTION",
+    r"Fit with Birch-Murnaghan, with safe fallback if data is slightly skewed": "Fit with Birch-Murnaghan, with safe fallback if data is slightly skewed",
+    r"Fallback to simple Parabola equation if Birch-Murnaghan fails": "Fallback to simple Parabola equation if Birch-Murnaghan fails",
+    r"Create original bulk": "Create original bulk",
+    r"HCP cannot be made cubic, we make it Orthorhombic": "HCP cannot be made cubic, we make it Orthorhombic",
+    r"Define transformation matrix P to bring the diagonal direction to the Z axis": "Define transformation matrix P to bring the diagonal direction to the Z axis",
+    r"Note: P for HCP may be different, but we use similar logic to create anisotropy": "Note: P for HCP may be different, but we use similar logic to create anisotropy",
+    r"P matrix for HCP to create stable orthogonal Supercell": "P matrix for HCP to create stable orthogonal Supercell",
+    r"Giá»¯ nguyÃªn orthorhombic HCP náº¿u chá»n \[111\]": "Keep orthorhombic HCP if [111] is chosen",
+    r"BÆ¯á»šC QUAN TRá»ŒNG: Xoay Ä‘á»ƒ hÆ°á»›ng \[111\] trÃ¹ng vá»›i trá»¥c Z há»‡ tá»a Ä‘á»™": "IMPORTANT STEP: Rotate so [111] direction aligns with Z-axis",
+    r"GiÃºp triá»‡t tiÃªu Shear Stress vÃ  Ä‘o Ä‘Ãºng MÃ´ Ä‘un Young hÆ°á»›ng \[111\]": "Helps eliminate Shear Stress and correctly measure Young's Modulus in [111] direction",
+    r"--- START PHONON TASK": "--- START PHONON TASK",
+    r"Check input structure...": "Check input structure...",
+    r"Nháº­n Ä‘Æ°á»£c (\{\w+\}) nguyÃªn tá»­. CÃ´ng thá»©c:": r"Received \1 atoms. Formula:",
+    r"Current Max Force:": "Current Max Force:",
+    r"Cáº¢NH BÃO: Lá»±c cÃ²n lá»›n \(>0\.05\), káº¿t quáº£ Phonon cÃ³ thá»ƒ bá»‹ áº£o hoáº·c Ä‘á»“ thá»‹ pháº³ng! HÃ£y Relax trÆ°á»›c\.": "WARNING: Force is still large (>0.05), Phonon results may be imaginary or flat! Please Relax first.",
+    r"Äang tÃ­nh toÃ¡n lá»±c vá»›i MatterSim \(Tá»•ng (\{\w+\}) cáº¥u trÃºc\)...": r"Calculating forces with MatterSim (Total \1 structures)...",
+    r"Processing": "Processing",
+    r"ÄÃ£ táº¡o ma tráº­n háº±ng sá»‘ lá»±c thÃ nh cÃ´ng\.": "Successfully created force constant matrix.",
+    r"Special handling for molecule/crystal": "Special handling for molecule/crystal",
+    r"Xá»­ lÃ½ phá»• rung \(Discrete/Bands\)...": "Process vibrational spectra (Discrete/Bands)...",
+    r"Use Histogram to avoid _smearing_function error": "Use Histogram to avoid _smearing_function error",
+    r"Draw horizontal lines": "Draw horizontal lines",
+    r"Extracting DOS data for crystal...": "Extracting DOS data for crystal...",
+    r"Sá»­ dá»¥ng Mesh má»‹n hÆ¡n \[20, 20, 20\] cho bÃ¡o cÃ¡o chuyÃªn nghiá»‡p": "Use finer Mesh [20, 20, 20] for professional reports",
+    r"Láº¥y táº§n sá»‘ chuáº©n tá»« mesh_dict \(Thay cho get_frequencies_all bá»‹ lá»—i\)": "Get standard frequencies from mesh_dict (Instead of get_frequencies_all which fails)",
+    r"Highest frequency found:": "Highest frequency found:",
+    r"WARNING: Frequency is still approximately 0. Please check the Relaxation step!": "WARNING: Frequency is still approximately 0. Please check the Relaxation step!",
+    r"Tá»± láº¥y dá»¯ liá»‡u Ä‘á»ƒ váº½ \(TrÃ¡nh lá»—i API 'ax' khÃ´ng tÆ°Æ¡ng thÃ­ch\)": "Get data manually to plot (Avoid API 'ax' incompatibility error)",
+    r"ThÃªm cÃ¡c Ä‘iá»ƒm Ä‘á»‘i xá»©ng cao \(High-Symmetry Points\) cho trá»¥c X": "Add High-Symmetry Points for X-axis",
+    r"Draw vertical lines separating Brillouin Zone at symmetry points": "Draw vertical lines separating Brillouin Zone at symmetry points",
+    r"ERROR at STEP 3:": "ERROR at STEP 3:",
+    r"Plotting and saving file...": "Plotting and saving file...",
+    r"Saved image at": "Saved image at",
+    r"COMPLETED PHONON TASK": "COMPLETED PHONON TASK",
+    r"NÃ¢ng ngÆ°á»¡ng lÃªn 128 nguyÃªn tá»­ Ä‘á»ƒ á»•n Ä‘á»‹nh nhiá»‡t Ä‘á»™ \(Delta T ~ 1/sqrt\(N\)\)": "Raise threshold to 128 atoms to stabilize temperature (Delta T ~ 1/sqrt(N))",
+    r"ThÃªm bÆ°á»›c Relaxation Ä‘á»ƒ khá»­ ná»™i nÄƒng dÆ° thá»«a \(Shock cáº¥u trÃºc\) trÆ°á»›c khi cáº¥p Ä‘á»™ng nÄƒng": "Add Relaxation step to remove excess internal energy (Structural shock) before providing kinetic energy",
+    r"Fix center of mass using Constraint instead of fixcm in Langevin": "Fix center of mass using Constraint instead of fixcm in Langevin",
+    r"Initialize velocities": "Initialize velocities",
+    r"Use fixcm=False per new ASE standard, increase friction to 0.01 for faster temperature recovery": "Use fixcm=False per new ASE standard, increase friction to 0.01 for faster temperature recovery",
+    r"Táº¡o Supercell lá»›n \(Ã­t nháº¥t 128 nguyÃªn tá»­\) Ä‘á»ƒ Temp á»•n Ä‘á»‹nh": "Create large Supercell (at least 128 atoms) for stable Temp",
+    r"Táº O KHUYáº¾T Táº¬T \(VACANCY\) - ChÃ¬a khÃ³a Ä‘á»ƒ khuáº¿ch tÃ¡n trong pha ráº¯n": "CREATE VACANCY - Key to diffusion in solid phase",
+    r"Fix center of mass and Initialize velocities at T_target": "Fix center of mass and Initialize velocities at T_target",
+    r"Thermal equilibration": "Thermal equilibration",
+    r"Data collection": "Data collection",
+    r"Calculate coefficient D": "Calculate coefficient D",
+    r"Fit vÃ¹ng Production \(bá» qua Ä‘iá»ƒm 0 náº¿u cáº§n, á»Ÿ Ä‘Ã¢y polyfit tá»± xá»­ lÃ½\)": "Fit Production region (skip point 0 if needed, here polyfit handles it)",
+    r"Quy Ä‘á»•i sang cm\^2/s:": "Convert to cm^2/s:",
+    r"Initialize structure": "Initialize structure",
+    r"Use provided calculator": "Use provided calculator",
+    r"Get F_vib": "Get F_vib",
+    r"Ã‰p pháº³ng máº£ng Ä‘á»ƒ trÃ¡nh lá»—i \"object too deep\"": "Flatten array to avoid 'object too deep' error",
+    r"Sáº¯p xáº¿p láº¡i Ä‘á»ƒ Ä‘áº£m báº£o tÃ­nh nháº¥t quÃ¡n cho np\.interp": "Re-sort to ensure consistency for np.interp",
+    r"NORMALIZED PER ATOM": "NORMALIZED PER ATOM",
+    r"TURN OFF MATTERSIM SPAM LOG": "TURN OFF MATTERSIM SPAM LOG",
+    r"Zoom into pressure range 0 - 6 GPa to capture curve with high resolution": "Zoom into pressure range 0 - 6 GPa to capture curve with high resolution",
+    r"Find sign change point of Gibbs difference": "Find sign change point of Gibbs difference",
+    r"Linear interpolation to find absolute exact T at diff == 0": "Linear interpolation to find absolute exact T at diff == 0",
+    r"Formula to find x-axis intersection": "Formula to find x-axis intersection",
+    r"or assign new if none": "or assign new if none",
+    r"REUSE LOADED BRAIN, DO NOT REINITIALIZE": "REUSE LOADED BRAIN, DO NOT REINITIALIZE",
+    r"RESTORE STANDARD FORMULA OF F_VIB TO RETURN SCALAR": "RESTORE STANDARD FORMULA OF F_VIB TO RETURN SCALAR",
+    r"G = E0 \+ F_vib náº¿u yÃªu cáº§u, ngÆ°á»£c láº¡i chá»‰ láº¥y F_vib": "G = E0 + F_vib if requested, else only take F_vib",
+    r"CACHE FIX: Set specific name and clean up junk files to avoid reading old force matrix": "CACHE FIX: Set specific name and clean up junk files to avoid reading old force matrix",
+    r"Delete old file if any": "Delete old file if any",
+    r"TÃ­nh Cv báº±ng Ä‘áº¡o hÃ m sá»‘ há»c cá»§a Ná»™i nÄƒng \(U\)": "Calculate Cv by numerical derivative of Internal Energy (U)",
+    r"Small temperature step to calculate derivative": "Small temperature step to calculate derivative",
+    r"Avoid negative or too small temperature when stepping back": "Avoid negative or too small temperature when stepping back",
+    r"Central derivative: Cv = dU / dT": "Central derivative: Cv = dU / dT",
+    r"Clean up junk files immediately after calculating": "Clean up junk files immediately after calculating",
+
+    # test_advanced_features.py
+    r"Khá»Ÿi táº¡o váº­t liá»‡u Sáº¯t \(Fe\) cáº¥u trÃºc BCC\.\.\.": "Initializing Iron (Fe) BCC structure...",
+    r"Äang cháº¡y tÃ­nh toÃ¡n Equation of State \(Bulk Modulus\)": "Running Equation of State (Bulk Modulus) calculation",
+    r"Optimal volume:": "Optimal volume:",
+    r"Plot EOS chart": "Plot EOS chart",
+    r"Data": "Data",
+    r"Äang cháº¡y thá»­ nghiá»‡m KÃ©o \(Tensile Test\)": "Running Tensile Test",
+    r"Get a new atomic system for tensile testing": "Get a new atomic system for tensile testing",
+    r"Estimated Young's Modulus:": "Estimated Young's Modulus:",
+    r"Äang cháº¡y Äá»™ng lá»±c há»c phÃ¢n tá»­ \(Diffusion/MSD\)": "Running Molecular Dynamics (Diffusion/MSD)",
+    r"Extremely high temperature to observe diffusion": "Extremely high temperature to observe diffusion",
+    r"Há»‡ sá»‘ khuáº¿ch tÃ¡n Æ°á»›c tÃ­nh \(D\) táº¡i": "Estimated diffusion coefficient (D) at",
+    r"Test process completed!": "Test process completed!",
+
+    # Lattice constant_Prediction.py
+    r"Force switch content tab": "Force switch content tab",
+    r"Update related widgets": "Update related widgets",
+    r"Set initial state": "Set initial state",
+    r"Improve fallback value: HCP usually has smaller a than FCC/BCC": "Improve fallback value: HCP usually has smaller a than FCC/BCC",
+    r"UPDATE OPTIMIZED STRUCTURE INTO MAIN MEMORY": "UPDATE OPTIMIZED STRUCTURE INTO MAIN MEMORY",
+    r"DATA JOURNEY LOG": "DATA JOURNEY LOG",
+    r"VARIABLE HANDOVER STATE": "VARIABLE HANDOVER STATE",
+    r"Relaxation completed at": "Relaxation completed at",
+    r"Biáº¿n 'self\.atoms' Ä‘Ã£ Ä‘Æ°á»£c cáº­p nháº­t thÃ nh cÃ´ng\.": "Variable 'self.atoms' successfully updated.",
+    r"First atom coordinates:": "First atom coordinates:",
+    r"Há»‡ thá»‘ng Ä‘Ã£ sáºµn sÃ ng truyá»n dá»¯ liá»‡u sang cháº¿ Ä‘á»™ Phonon\.": "System is ready to transfer data to Phonon mode.",
+    r"BÃO CÃO TRUY Váº¾T Lá»–I \(EXTREME DEBUG\):": "BUG TRACE REPORT (EXTREME DEBUG):",
+    r"Print entire error stack trace to Terminal": "Print entire error stack trace to Terminal",
+    r"Print additional important environment variables": "Print additional important environment variables",
+    r"Error at Mode:": "Error at Mode:",
+    r"Atoms structure:": "Atoms structure:",
+    r"Data type of e:": "Data type of e:",
+    r"Cáº¢I TIáº¾N: Sá»­ dá»¥ng Parabolic Fit Ä‘á»ƒ tÃ¬m Ä‘iá»ƒm cá»±c tiá»ƒu chÃ­nh xÃ¡c hÆ¡n np\.argmin": "IMPROVEMENT: Use Parabolic Fit to find minimum point more accurately than np.argmin",
+    r"Only take points around the lowest energy region for more accurate fitting": "Only take points around the lowest energy region for more accurate fitting",
+    r"2nd degree fit:": "2nd degree fit:",
+    r"Check if fit point is outside scan range, fallback to argmin": "Check if fit point is outside scan range, fallback to argmin",
+    r"Usually plot log scale for vapor pressure": "Usually plot log scale for vapor pressure",
+    r"Sort points in ascending order of Pressure to connect solid lines": "Sort points in ascending order of Pressure to connect solid lines",
+    r"Thay vÃ¬ plot\(b_T, b_P\), ta plot máº£ng Ä‘Ã£ sáº¯p xáº¿p": "Instead of plot(b_T, b_P), we plot the sorted array",
+    r"ADD THIS LINE TO FORCE PLOT X-AXIS LOCK TO INPUT BOX:": "ADD THIS LINE TO FORCE PLOT X-AXIS LOCK TO INPUT BOX:"
+}
+
+for f in glob.glob('*.py'):
+    with open(f, 'r', encoding='utf-8') as file:
+        content = file.read()
+    
+    new_content = content
+    for pattern, replacement in replacements.items():
+        new_content = re.sub(pattern, replacement, new_content)
+        
+    if new_content != content:
+        with open(f, 'w', encoding='utf-8') as file:
+            file.write(new_content)
+        print(f"Updated {f}")
+
+

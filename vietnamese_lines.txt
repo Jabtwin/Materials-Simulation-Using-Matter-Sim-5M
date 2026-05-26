@@ -1,0 +1,212 @@
+﻿
+engine.py:70:    # 1. Bước quan trọng: Tối ưu hóa toàn bộ cấu trúc (cả a và c cho HCP) tại P=0 trước khi quét
+engine.py:71:    # Điều này đảm bảo c/a ratio đạt mức chuẩn xác nhất và đường cong E-V sẽ mượt mà tuyệt đối.
+engine.py:81:    # 2. Quét thể tích đẳng hướng (Isotropic Scaling)
+engine.py:84:        # BỎ BƯỚC RELAX BÊN TRONG VÒNG LẶP ĐỂ TRÁNH NHIỄU (NOISE) CHO HÀM FIT
+engine.py:90:    # 3. Fit bằng Birch-Murnaghan, có fallback an toàn nếu dữ liệu hơi lệch
+engine.py:95:        # Fallback sang phương trình Parabola đơn giản nếu Birch-Murnaghan thất bại
+engine.py:161:        # Tạo bulk gốc
+engine.py:163:            # HCP không thể làm cubic, ta làm Orthorhombic
+engine.py:168:        # Định nghĩa ma trận chuyển đổi P để đưa hướng chéo lên trục Z
+engine.py:169:        # Lưu ý: P cho HCP có thể khác, nhưng ta dùng logic tương tự để tạo sự dị hướng
+engine.py:173:            # Ma trận P cho HCP để tạo Supercell trực giao ổn định
+engine.py:174:            P = [[1, 0, 0], [0, 1, 0], [0, 0, 1]] # Giữ nguyên orthorhombic HCP nếu chọn [111]
+engine.py:180:        # BƯỚC QUAN TRỌNG: Xoay để hướng [111] trùng với trục Z hệ tọa độ
+engine.py:181:        # Giúp triệt tiêu Shear Stress và đo đúng Mô đun Young hướng [111]
+engine.py:281:    print(f"\n--- BẮT ĐẦU TÁC VỤ PHONON (Molecule={is_molecule}) ---")
+engine.py:283:    # STEP 1: Kiểm tra cấu trúc đầu vào
+engine.py:284:    print(f"STEP 1: Kiểm tra cấu trúc đầu vào...")
+engine.py:285:    print(f"DEBUG: Nhận được {len(atoms)} nguyên tử. Công thức: {atoms.get_chemical_formula()}")
+engine.py:290:    print(f"DEBUG: Max Force hiện tại: {max_f:.6f} eV/Å")
+engine.py:292:         print("⚠️ CẢNH BÁO: Lực còn lớn (>0.05), kết quả Phonon có thể bị ảo hoặc đồ thị phẳng! Hãy 
+Relax trước.")
+engine.py:310:    # STEP 2: Tính toán hằng số lực
+engine.py:311:    print(f"STEP 2: Đang tính toán lực với MatterSim (Tổng {len(supercells)} cấu trúc)...")
+engine.py:321:        if i % 5 == 0: print(f"DEBUG: Đang xử lý {i}/{len(supercells)}...")
+engine.py:325:    print("DEBUG: Đã tạo ma trận hằng số lực thành công.")
+engine.py:327:    # STEP 3: Xử lý đặc thù cho phân tử/tinh thể
+engine.py:328:    print(f"STEP 3: Xử lý phổ rung (Discrete/Bands)...")
+engine.py:334:            # --- MOLECULE DOS: Dùng Histogram để tránh lỗi _smearing_function ---
+engine.py:341:            # --- MOLECULE LEVELS: Vẽ vạch ngang ---
+engine.py:350:            print("STEP 3: Đang trích xuất dữ liệu DOS cho tinh thể...")
+engine.py:351:            # Sử dụng Mesh mịn hơn [20, 20, 20] cho báo cáo chuyên nghiệp
+engine.py:355:            # Lấy tần số chuẩn từ mesh_dict (Thay cho get_frequencies_all bị lỗi)
+engine.py:359:            print(f"DEBUG: Tần số cao nhất tìm thấy: {max_f:.2f} THz")
+engine.py:362:                print("⚠️ CẢNH BÁO: Tần số vẫn xấp xỉ 0. Hãy kiểm tra bước Relaxation!")
+engine.py:364:            # Tự lấy dữ liệu để vẽ (Tránh lỗi API 'ax' không tương thích)
+engine.py:381:            # Thêm các điểm đối xứng cao (High-Symmetry Points) cho trục X
+engine.py:392:            # Vẽ các đường kẻ dọc phân tách Brillouin Zone tại các điểm đối xứng
+engine.py:410:        print(f"ERROR tại STEP 3: {e}")
+engine.py:413:    # STEP 4: Lưu và báo cáo
+engine.py:414:    print(f"STEP 4: Đang dựng biểu đồ và lưu file...")
+engine.py:418:    print(f"DEBUG: Đã lưu hình ảnh tại {plot_path}")
+engine.py:419:    print(f"--- HOÀN TẤT TÁC VỤ PHONON --- \n")
+engine.py:437:    # Nâng ngưỡng lên 128 nguyên tử để ổn định nhiệt độ (Delta T ~ 1/sqrt(N))
+engine.py:443:    # Thêm bước Relaxation để khử nội năng dư thừa (Shock cấu trúc) trước khi cấp động năng
+engine.py:448:    # Cố định khối tâm bằng Constraint thay vì dùng fixcm trong Langevin
+engine.py:451:    # Khởi tạo vận tốc
+engine.py:462:        # Sử dụng fixcm=False theo chuẩn ASE mới, tăng friction lên 0.01 để hệ hồi phục nhiệt độ nhanh 
+hơn
+engine.py:523:    # 1. Tạo Supercell lớn (ít nhất 128 nguyên tử) để Temp ổn định
+engine.py:529:    # 2. TẠO KHUYẾT TẬT (VACANCY) - Chìa khóa để khuếch tán trong pha rắn
+engine.py:534:    # 3. Cố định khối tâm và Khởi tạo vận tốc tại T_target
+engine.py:541:    # 4. Cân bằng nhiệt (Equilibration)
+engine.py:546:    # 5. Thu thập dữ liệu (Production)
+engine.py:574:    # 6. Tính hệ số D (Einstein Relation: MSD = 6Dt)
+engine.py:576:        # Fit vùng Production (bỏ qua điểm 0 nếu cần, ở đây polyfit tự xử lý)
+engine.py:579:        # Quy đổi sang cm^2/s: 1 A^2/ps = 1e-4 cm^2/s
+engine.py:603:    # 1. Khởi tạo cấu trúc
+engine.py:612:    # Dùng calculator truyền vào
+engine.py:625:    # 2. Lấy F_vib (Vibrational part ONLY)
+engine.py:631:    # FIX: Ép phẳng mảng để tránh lỗi "object too deep"
+engine.py:635:    # Sắp xếp lại để đảm bảo tính nhất quán cho np.interp
+engine.py:639:    # G = E_pot + PV + F_vib (CHUẨN HÓA TRÊN TỪNG NGUYÊN TỬ)
+engine.py:652:    # --- TẮT SPAM LOG CỦA MATTERSIM ---
+engine.py:668:    # Zoom vào dải áp suất 0 - 6 GPa để bắt đường cong với độ phân giải cao (30 điểm)
+engine.py:685:            # Bắt điểm đổi dấu của hiệu số Gibbs
+engine.py:690:                # Nội suy tuyến tính để tìm T chính xác tuyệt đối tại diff == 0
+engine.py:694:                # Công thức tìm điểm cắt trục hoành
+engine.py:715:    # Dùng calculator truyền vào hoặc gán mới nếu chưa có
+engine.py:732:            # TÁI SỬ DỤNG BỘ NÃO ĐÃ LOAD, KHÔNG KHỞI TẠO LẠI
+engine.py:760:            # PHỤC HỒI CÔNG THỨC CHUẨN CỦA F_VIB ĐỂ TRẢ VỀ SCALAR
+engine.py:763:            # G = E0 + F_vib nếu yêu cầu, ngược lại chỉ lấy F_vib
+engine.py:781:            # SỬA LỖI CACHE: Đặt tên riêng và dọn dẹp file rác để tránh đọc nhầm ma trận lực cũ
+engine.py:784:            vib.clean() # Xóa file cũ nếu có
+engine.py:811:            # Tính Cv bằng đạo hàm số học của Nội năng (U)
+engine.py:813:            dT_step = 0.1 # Bước nhảy nhiệt độ nhỏ để tính đạo hàm
+engine.py:815:                # Tránh nhiệt độ âm hoặc quá nhỏ khi lùi bước nhảy
+engine.py:819:                # Đạo hàm trung tâm: Cv = dU / dT
+engine.py:824:            # Tính xong dọn sạch sẽ file rác luôn
+export_for_gemini.py:20:    # 1. Khởi tạo cấu trúc thử nghiệm: Fe (bcc)
+export_for_gemini.py:25:    # Lưu cấu trúc 3D Viewer (HTML và XYZ)
+export_for_gemini.py:39:            f.write(f"   - Optimal a: {a_opt:.3f} Å\n")
+export_for_gemini.py:45:        plt.xlabel("Lattice Constant (Å)")
+export_for_gemini.py:59:            f.write(f"   - Optimal Volume (V0): {v0:.2f} Å³\n\n")
+export_for_gemini.py:69:        plt.xlabel("Volume (Å³)")
+export_for_gemini.py:177:            f.write(f"   - Diffusion coefficient (D): {D_cm2_s:.4e} cm²/s\n\n")
+export_for_gemini.py:182:        plt.ylabel("MSD (Å²)")
+export_for_gemini.py:189:    # ================= Phân tử H2O (Relaxation & MD) =================
+export_for_gemini.py:203:            f.write(f"   - Max Force: {relax_res['fmax']:.4f} eV/Å\n")
+export_for_gemini.py:215:            f.write(f"    - Final volume: {volumes_md[-1]:.1f} Å³\n\n")
+export_for_gemini.py:222:        axs[2].set_ylabel("Volume (Å³)")
+export_for_gemini.py:230:    print(f"\n✅ Successfully completed all 10 functions! All files (PNG, TXT, HTML) saved to 
+directory: {out_dir}")
+Lattice constant_Prediction.py:27:# ─── Compatibility Matrix ────────────────────────────────────────
+Lattice constant_Prediction.py:35:        # Molecules are not periodic crystals — no lattice constant, no phase 
+diagram, no tensile
+Lattice constant_Prediction.py:53:# ────────────────────────────────────────────────────────────────
+Lattice constant_Prediction.py:117:        self._btn = ctk.CTkButton(self, text="▼", width=28, height=28,
+Lattice constant_Prediction.py:322:        # Element inputs — searchable (Only solid elements with defined crystals)
+Lattice constant_Prediction.py:332:        # Element structures — dynamic list
+Lattice constant_Prediction.py:337:        # Orientation — Only relevant for crystals in Tensile Test
+Lattice constant_Prediction.py:343:        # Molecule inputs — searchable (Common stable molecules only)
+Lattice constant_Prediction.py:364:        self.run_btn = ctk.CTkButton(self.sel_frame, text="▶ Run Simulation", 
+command=self._on_run, fg_color="green", hover_color="darkgreen")
+Lattice constant_Prediction.py:453:        # 1. Ép chuyển Tab nội dung
+Lattice constant_Prediction.py:455:        # 2. Cập nhật các widget liên quan
+Lattice constant_Prediction.py:500:        self.preview_btn = ctk.CTkButton(btn_frm, text="👁 Preview Current 
+Structure", command=self._preview_3d_structure, fg_color="#8e44ad", hover_color="#9b59b6")
+Lattice constant_Prediction.py:566:            self.view3d_ax.set_xlabel('X (Å)')
+Lattice constant_Prediction.py:567:            self.view3d_ax.set_ylabel('Y (Å)')
+Lattice constant_Prediction.py:568:            self.view3d_ax.set_zlabel('Z (Å)')
+Lattice constant_Prediction.py:580:        ctk.CTkLabel(self.equi_input_frame, text="± Scan around guess 
+(%):").pack(side=tk.LEFT, padx=5)
+Lattice constant_Prediction.py:775:        # Thiết lập trạng thái ban đầu
+Lattice constant_Prediction.py:795:            "tio2":  None,   # rutile — complex, fallback to Atoms
+Lattice constant_Prediction.py:796:            "fe2o3": None,   # corundum — complex, fallback to Atoms
+Lattice constant_Prediction.py:871:                    # Cải thiện giá trị cứu hộ: HCP thường có a nhỏ hơn FCC/BCC
+Lattice constant_Prediction.py:906:            self.run_btn.configure(state="normal", text="▶ Run Simulation")
+Lattice constant_Prediction.py:940:                # CẬP NHẬT CẤU TRÚC TỐI ƯU VÀO BỘ NHỚ CHÍNH
+Lattice constant_Prediction.py:943:                # --- NHẬT KÝ HÀNH TRÌNH DỮ LIỆU ---
+Lattice constant_Prediction.py:944:                print("\n" + "✅"*3 + " TRẠNG THÁI BÀN GIAO BIẾN " + "✅"*3)
+Lattice constant_Prediction.py:945:                print(f"DEBUG: Relaxation hoàn tất lúc 
+{datetime.now().strftime('%H:%M:%S')}")
+Lattice constant_Prediction.py:946:                print(f"DEBUG: Biến 'self.atoms' đã được cập nhật thành công.")
+Lattice constant_Prediction.py:948:                print(f"DEBUG: Max Force hiện tại: {fmax_val:.6f} eV/Å")
+Lattice constant_Prediction.py:950:                    print(f"DEBUG: Tọa độ nguyên tử đầu tiên: 
+{self.atoms.positions[0]}")
+Lattice constant_Prediction.py:951:                print("TERMINAL: Hệ thống đã sẵn sàng truyền dữ liệu sang chế độ 
+Phonon.")
+Lattice constant_Prediction.py:1040:            print("BÁO CÁO TRUY VẾT LỖI (EXTREME DEBUG):")
+Lattice constant_Prediction.py:1041:            # 1. In toàn bộ cây phả hệ lỗi ra Terminal
+Lattice constant_Prediction.py:1044:            # 2. In thêm các biến môi trường quan trọng
+Lattice constant_Prediction.py:1045:            print(f"Lỗi tại Mode: {mode}")
+Lattice constant_Prediction.py:1047:                print(f"Cấu trúc Atoms: {atoms.get_chemical_formula()}")
+Lattice constant_Prediction.py:1049:            print(f"Kiểu dữ liệu e: {type(e)}")
+Lattice constant_Prediction.py:1060:                self.run_btn.configure(state="normal", text="▶ Run Simulation")
+Lattice constant_Prediction.py:1083:            self.equi_ax.set_xlabel("Lattice constant a (Å)")
+Lattice constant_Prediction.py:1085:            self.equi_ax.set_title(f"Energy vs. a — {element} ({phase})")
+Lattice constant_Prediction.py:1090:            # CẢI TIẾN: Sử dụng Parabolic Fit để tìm điểm cực tiểu chính xác hơn 
+np.argmin
+Lattice constant_Prediction.py:1092:                # Chỉ lấy các điểm xung quanh vùng có năng lượng thấp nhất để fit 
+chính xác hơn
+Lattice constant_Prediction.py:1094:                # Fit bậc 2: E = Aa^2 + Ba + C
+Lattice constant_Prediction.py:1099:                # Kiểm tra nếu điểm fit nằm ngoài dải quét thì fallback về argmin
+Lattice constant_Prediction.py:1108:            self.equi_res_label.configure(text=f"Equilibrium Scan: Optimal a: 
+{a_opt:.3f} Å  |  Min Energy: {E_min:.4f} eV")
+Lattice constant_Prediction.py:1120:            self.eos_ax.set_xlabel("Volume (Å³)")
+Lattice constant_Prediction.py:1122:            self.eos_ax.set_title(f"Equation of State — {element} ({phase})")
+Lattice constant_Prediction.py:1127:            self.eos_res_label.configure(text=f"Equation of State: Bulk Modulus 
+(B0): {data['B_GPa']:.2f} GPa  |  Optimal V0: {data['v0']:.2f} Å³")
+Lattice constant_Prediction.py:1128:            messagebox.showinfo("Equation of State", f"Bulk Modulus: 
+{data['B_GPa']:.2f} GPa\nOptimal Volume: {data['v0']:.4f} Å³")
+Lattice constant_Prediction.py:1137:            self.tensile_ax.set_title(f"Tensile Test — {element} ({phase})")
+Lattice constant_Prediction.py:1151:                msg += f"\nAverage Poisson's Ratio (ν): {avg_nu:.3f}"
+Lattice constant_Prediction.py:1157:            self.relax_log.insert(tk.END, f"Relaxation: Final Energy: 
+{res['energy']:.4f} eV  |  Max Force: {res['fmax']:.4f} eV/Å\n")
+Lattice constant_Prediction.py:1189:            ax_v.set_ylabel('Volume (Å³)')
+Lattice constant_Prediction.py:1198:            self.md_res_label.configure(text=f"Molecular Dynamics: Final Temp: 
+{final_t:.1f} K  |  Final Volume: {final_v:.1f} Å³")
+Lattice constant_Prediction.py:1204:            self.diff_ax.set_ylabel("Mean Square Displacement (Å²)")
+Lattice constant_Prediction.py:1205:            self.diff_ax.set_title(f"Diffusion at {self.diff_temp.get()}K — 
+{element} ({phase})")
+Lattice constant_Prediction.py:1208:            self.diff_res_label.configure(text=f"Diffusion: Diffusion Coefficient 
+(D): {data['D']:.4e} cm²/s")
+Lattice constant_Prediction.py:1209:            messagebox.showinfo("Diffusion", f"Estimated Diffusion Coefficient 
+(D): {data['D']:.4e} cm²/s")
+Lattice constant_Prediction.py:1219:                # Sắp xếp các điểm theo thứ tự Áp suất tăng dần để nối nét liền
+Lattice constant_Prediction.py:1224:                # Thay vì plot(b_T, b_P), ta plot mảng đã sắp xếp
+Lattice constant_Prediction.py:1233:            # THÊM DÒNG NÀY ĐỂ ÉP ĐỒ THỊ KHÓA TRỤC X THEO Ô NHẬP LIỆU:
+Lattice constant_Prediction.py:1248:            self.vp_ax.set_title(f"Vapor Pressure P(T) — {element}")
+Lattice constant_Prediction.py:1249:            self.vp_ax.set_yscale('log') # Thường vẽ thang log cho áp suất hơi
+mattersim_phonon.py:128:            output_text.insert(tk.END, f"Structure: {struct}, Lattice: {lattice} Å\n")
+mattersim_phonon.py:138:            plt.xlabel('T (K)'); plt.ylabel('Cp (J/kg·K)')
+mattersim_phonon.py:145:            plt.xlabel('T (K)'); plt.ylabel('k (W/m·K)')
+mattersim_phonon.py:178:                        "Stress (eV/Å³):\n" + np.array2string(s,4) + "\n"
+mattersim_phonon.py:225:ttk.Label(root, text='Lattice (Å):').grid(column=0, row=4, sticky=tk.W)
+test_advanced_features.py:7:    print("Khởi tạo vật liệu Sắt (Fe) cấu trúc BCC...")
+test_advanced_features.py:12:    print("\n--- 1. Đang chạy tính toán Equation of State (Bulk Modulus) ---")
+test_advanced_features.py:14:    print(f"-> Thể tích tối ưu: {v0:.4f} Å³")
+test_advanced_features.py:17:    # Vẽ biểu đồ EOS
+test_advanced_features.py:19:    plt.plot(volumes, energies, 'o', label='Dữ liệu')
+test_advanced_features.py:26:    plt.xlabel("Volume (Å³)")
+test_advanced_features.py:28:    plt.title(f"Equation of State — {element} ({phase})")
+test_advanced_features.py:32:    print("\n--- 2. Đang chạy thử nghiệm Kéo (Tensile Test) ---")
+test_advanced_features.py:33:    # Lấy một hệ nguyên tử mới để test kéo giãn
+test_advanced_features.py:39:        print(f"-> Ước tính Young's Modulus: {slope:.2f} GPa")
+test_advanced_features.py:45:    plt.title(f"Tensile Test — {element} ({phase})")
+test_advanced_features.py:49:    print("\n--- 3. Đang chạy Động lực học phân tử (Diffusion/MSD) ---")
+test_advanced_features.py:51:    T = 1000 # Nhiệt độ cực cao để thấy sự dịch chuyển
+test_advanced_features.py:53:    print(f"-> Hệ số khuếch tán ước tính (D) tại {T}K: {D:.4e} Å²/ps")
+test_advanced_features.py:58:    plt.ylabel("Mean Square Displacement (Å²)")
+test_advanced_features.py:59:    plt.title(f"Diffusion (MSD) tại {T}K — {element} ({phase})")
+test_advanced_features.py:63:    print("\nHoàn tất quá trình Test!")
+test_all_engines.py:2:Full material × function test matrix for engine.py
+test_all_engines.py:32:# ═══════════════════════════════════════════════════════
+test_all_engines.py:33:# IRON (Fe) — bcc — Element
+test_all_engines.py:34:# ═══════════════════════════════════════════════════════
+test_all_engines.py:104:# ═══════════════════════════════════════════════════════
+test_all_engines.py:105:# ALUMINIUM (Al) — fcc — Element
+test_all_engines.py:106:# ═══════════════════════════════════════════════════════
+test_all_engines.py:148:# ═══════════════════════════════════════════════════════
+test_all_engines.py:149:# CARBON (C) — diamond — Element
+test_all_engines.py:150:# ═══════════════════════════════════════════════════════
+test_all_engines.py:183:    # This is correct physics — no meaningful phase boundary exists in that pressure range.
+test_all_engines.py:185:    # Accept any result (positive or negative) — just check no crash
+test_all_engines.py:192:# ═══════════════════════════════════════════════════════
+test_all_engines.py:193:# NaCl — rocksalt — Compound
+test_all_engines.py:194:# ═══════════════════════════════════════════════════════
+test_all_engines.py:218:# ═══════════════════════════════════════════════════════
+test_all_engines.py:220:# ═══════════════════════════════════════════════════════
+
+

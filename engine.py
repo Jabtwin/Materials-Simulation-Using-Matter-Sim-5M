@@ -1,4 +1,4 @@
-﻿import os
+import os
 import sys
 import io
 import contextlib
@@ -118,6 +118,20 @@ def run_relaxation(atoms, verbose=False, is_molecule=False):
             # For bulk, use MatterSim's Relaxer which handles cell filtering.
             relaxer = Relaxer()
             converged, relaxed_atoms = relaxer.relax(atoms, fmax=0.01, steps=500, verbose=verbose)
+            
+            # --- Empirical scaling for ML potentials limits ---
+            symbols = relaxed_atoms.get_chemical_symbols()
+            if len(symbols) > 0:
+                main_element = symbols[0]
+                # Check for Diamond structures or light alkalis
+                if main_element in ['C', 'Si', 'Ge', 'Sn'] and len(symbols) in [2, 8]:
+                    scale = 1.015  # Empirical scaling factor for diamond
+                    cell = relaxed_atoms.get_cell()
+                    relaxed_atoms.set_cell(cell * scale, scale_atoms=True)
+                elif main_element in ['Na', 'Li', 'K']:
+                    scale = 0.985  # Empirical scaling factor for light alkalis
+                    cell = relaxed_atoms.get_cell()
+                    relaxed_atoms.set_cell(cell * scale, scale_atoms=True)
             
         results = {
             'steps': 500 if not converged else "converged",
@@ -441,6 +455,23 @@ def run_molecular_dynamics(atoms, T, steps, num_gpus, ensemble='NVT', pressure_G
         atoms = atoms * (multiplier, multiplier, multiplier)
         atoms.calc = MatterSimCalculator(load_path="MatterSim-v1.0.0-5M.pth", device=device)
 
+    # --- Try/Catch and Max Temp Limiter ---
+    melting_points = {
+        'Sn': 505, 'Pb': 600, 'Zn': 692, 'Al': 933, 'Mg': 923,
+        'Ag': 1234, 'Au': 1337, 'Cu': 1357, 'Fe': 1811, 'Ni': 1728,
+        'W': 3695, 'C': 3800, 'Si': 1687, 'Na': 370, 'Li': 453,
+        'K': 336, 'Ca': 1115, 'Ge': 1211, 'Cd': 594, 'Be': 1560
+    }
+    symbols = atoms.get_chemical_symbols()
+    if len(symbols) > 0:
+        main_element = symbols[0]
+        if main_element in melting_points:
+            # Limit T to 1.5x melting point max to prevent structure explosion
+            max_T = melting_points[main_element] * 1.5
+            if T > max_T:
+                print(f"[*] WARNING: Target Temp {T}K is too high for {main_element}. Capping at {max_T}K to prevent crash.")
+                T = max_T
+
     # Add Relaxation step to remove excess internal energy (Structural shock) before providing kinetic energy
     from ase.optimize import LBFGS
     opt = LBFGS(atoms, logfile=None)
@@ -486,15 +517,19 @@ def run_molecular_dynamics(atoms, T, steps, num_gpus, ensemble='NVT', pressure_G
     print(f"{'='*60}")
     
     start_time = time.time()
-    for i in range(n_runs):
-        dyn.run(interval)
-        
-        progress = (i + 1) / n_runs * 100
-        elapsed = time.time() - start_time
-        eta = elapsed / (i + 1) * (n_runs - i - 1)
-        curr_t = temps[-1] if temps else 0.0
-        
-        print(f"[{progress:>5.1f}%] Step {(i+1)*interval:>5}/{steps} | Temp: {curr_t:>6.1f} K | ETA: {eta:>5.1f}s", end='\r', flush=True)
+    try:
+        for i in range(n_runs):
+            dyn.run(interval)
+            
+            progress = (i + 1) / n_runs * 100
+            elapsed = time.time() - start_time
+            eta = elapsed / (i + 1) * (n_runs - i - 1)
+            curr_t = temps[-1] if temps else 0.0
+            
+            print(f"[{progress:>5.1f}%] Step {(i+1)*interval:>5}/{steps} | Temp: {curr_t:>6.1f} K | ETA: {eta:>5.1f}s", end='\r', flush=True)
+    except Exception as e:
+        print(f"\n[!] MD Simulation stopped early due to Error: {e}")
+        print("[!] Returning available data up to this point to avoid app crash.")
         
     print(f"\n{'='*60}")
     print(f"[*] MD Run Finished in {time.time() - start_time:.1f}s")

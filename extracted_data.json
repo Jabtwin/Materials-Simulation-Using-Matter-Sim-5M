@@ -1,0 +1,4142 @@
+[
+  {
+    "Element": "Fe",
+    "Structure": "bcc",
+    "a_pred": 2.813,
+    "B_pred": 178.85,
+    "pass_count": 12,
+    "fail_count": 0,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "2 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -16.9475 eV at a=2.813 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 178.85 GPa, V0 = 22.84 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -16.9419 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 7.74 GPa, Avg Poisson = 0.295"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 10.29 GPa, Avg Poisson = 0.243"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Ran 10 steps. Avg Temp = 282.9 K"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 2.1994e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -8.445 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 4.29 eV. P(max) = 2.41e-17 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 2.060 eV"
+      }
+    }
+  },
+  {
+    "Element": "Fe",
+    "Structure": "fcc",
+    "a_pred": 2.206,
+    "B_pred": 70.21,
+    "pass_count": 11,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "1 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -7.1572 eV at a=2.206 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 70.21 GPa, V0 = 11.11 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -5.9174 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.00 GPa, Avg Poisson = nan"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 2.87 GPa, Avg Poisson = -0.510"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 1.9633e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -16.890 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 4.29 eV. P(max) = 2.41e-17 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 1.888 eV"
+      }
+    }
+  },
+  {
+    "Element": "Fe",
+    "Structure": "fcc",
+    "a_pred": 3.12,
+    "B_pred": 62.75,
+    "pass_count": 12,
+    "fail_count": 0,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "4 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -28.6287 eV at a=3.120 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 62.75 GPa, V0 = 45.98 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -23.6695 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 10.42 GPa, Avg Poisson = 0.240"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 2.87 GPa, Avg Poisson = -0.510"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Ran 10 steps. Avg Temp = 231.0 K"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 2.1284e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -5.811 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 1.74 eV. P(max) = 1.79e-04 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 1.724 eV"
+      }
+    }
+  },
+  {
+    "Element": "Fe",
+    "Structure": "hcp",
+    "a_pred": 2.88,
+    "B_pred": 98.95,
+    "pass_count": 9,
+    "fail_count": 2,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "2 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -15.6504 eV at a=2.880 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 98.95 GPa, V0 = 21.31 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -14.9336 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: True"
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 4.1904e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -14.966 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 3.29 eV. P(max) = 2.77e-12 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 1.896 eV"
+      },
+      "Phase Diagram: bcc vs fcc": {
+        "status": "UNKNOWN"
+      },
+      "Phase Diagram": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      }
+    }
+  },
+  {
+    "Element": "Al",
+    "Structure": "fcc",
+    "a_pred": 2.864,
+    "B_pred": 72.68,
+    "pass_count": 11,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "1 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -3.7325 eV at a=2.864 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 72.68 GPa, V0 = 16.37 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -3.7325 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.00 GPa, Avg Poisson = nan"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 3.55 GPa, Avg Poisson = 0.255"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 2.0989e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -23.243 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 1.74 eV. P(max) = 1.79e-04 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 1.654 eV"
+      }
+    }
+  },
+  {
+    "Element": "Al",
+    "Structure": "hcp",
+    "a_pred": 2.88,
+    "B_pred": 98.95,
+    "pass_count": 10,
+    "fail_count": 0,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "2 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -15.6504 eV at a=2.880 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 98.95 GPa, V0 = 21.31 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -14.9336 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: True"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Ran 10 steps. Avg Temp = 300.3 K"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 5.2164e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -3.707 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 2.48 eV. P(max) = 3.30e-08 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 0.803 eV"
+      }
+    }
+  },
+  {
+    "Element": "Na",
+    "Structure": "bcc",
+    "a_pred": 3.59,
+    "B_pred": 7.83,
+    "pass_count": 15,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "1 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -1.3069 eV at a=3.590 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 7.83 GPa, V0 = 36.60 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -1.3065 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.01 GPa, Avg Poisson = -0.004"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.56 GPa, Avg Poisson = 0.208"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Diffusion": {
+        "status": "UNKNOWN"
+      },
+      "Thermodynamics": {
+        "status": "UNKNOWN"
+      },
+      "Vapor Pressure": {
+        "status": "UNKNOWN"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "UNKNOWN"
+      },
+      "Phase Diagram: bcc vs fcc": {
+        "status": "PASS",
+        "details": "Formation Energy = 0.195 eV"
+      }
+    }
+  },
+  {
+    "Element": "Na",
+    "Structure": "fcc",
+    "a_pred": 2.206,
+    "B_pred": 7.8,
+    "pass_count": 8,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "1 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy 4.8441 eV at a=2.206 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 7.80 GPa, V0 = 37.04 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = 6.3834 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.00 GPa, Avg Poisson = nan"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.48 GPa, Avg Poisson = 0.233"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: True"
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Phase Diagram": {
+        "status": "PASS",
+        "details": "Found 0 boundary points."
+      }
+    }
+  },
+  {
+    "Element": "Al",
+    "Structure": "fcc",
+    "a_pred": 4.05,
+    "B_pred": 72.68,
+    "pass_count": 12,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "4 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -14.9300 eV at a=4.050 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 72.68 GPa, V0 = 65.50 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -14.9300 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 2.58 GPa, Avg Poisson = 0.332"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 3.55 GPa, Avg Poisson = 0.255"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Ran 10 steps. Avg Temp = 285.8 K"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 1.8767e-05 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx 6.524 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = -7.34 eV. P(max) = 9.71e+41 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 0.219 eV"
+      },
+      "Phase Diagram: bcc vs fcc": {
+        "status": "UNKNOWN"
+      },
+      "Phase Diagram": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      }
+    }
+  },
+  {
+    "Element": "Mg",
+    "Structure": "hcp",
+    "a_pred": 3.21,
+    "B_pred": 39.17,
+    "pass_count": 9,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "2 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -2.9976 eV at a=3.210 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 39.17 GPa, V0 = 45.54 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -2.9976 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 5.3003e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -14.828 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 2.48 eV. P(max) = 3.30e-08 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 0.643 eV"
+      }
+    }
+  },
+  {
+    "Element": "Na",
+    "Structure": "bcc",
+    "a_pred": 4.145,
+    "B_pred": 7.83,
+    "pass_count": 12,
+    "fail_count": 0,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "2 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -2.6137 eV at a=4.145 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 7.83 GPa, V0 = 73.19 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -2.6131 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.04 GPa, Avg Poisson = 0.452"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.56 GPa, Avg Poisson = 0.208"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Ran 10 steps. Avg Temp = 288.0 K"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 5.1071e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -2.964 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 1.25 eV. P(max) = 4.80e-02 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 0.684 eV"
+      }
+    }
+  },
+  {
+    "Element": "Cu",
+    "Structure": "fcc",
+    "a_pred": 2.553,
+    "B_pred": 146.24,
+    "pass_count": 11,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "1 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -4.0974 eV at a=2.553 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 146.24 GPa, V0 = 11.84 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -4.0974 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = -0.00 GPa, Avg Poisson = nan"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 8.27 GPa, Avg Poisson = 0.248"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 4.1136e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -2.619 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 0.35 eV. P(max) = 1.70e+03 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 0.171 eV"
+      }
+    }
+  },
+  {
+    "Element": "Cu",
+    "Structure": "fcc",
+    "a_pred": 3.12,
+    "B_pred": 7.8,
+    "pass_count": 12,
+    "fail_count": 0,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "4 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy 19.3764 eV at a=3.120 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 7.80 GPa, V0 = 148.14 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = 25.5335 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.31 GPa, Avg Poisson = 0.344"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.48 GPa, Avg Poisson = 0.233"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: True"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Ran 10 steps. Avg Temp = 277.1 K"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 1.9145e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -4.072 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 2.48 eV. P(max) = 3.14e-08 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 1.000 eV"
+      }
+    }
+  },
+  {
+    "Element": "Ni",
+    "Structure": "fcc",
+    "a_pred": 2.489,
+    "B_pred": 195.33,
+    "pass_count": 15,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "1 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -5.7720 eV at a=2.489 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 195.33 GPa, V0 = 10.78 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -5.7720 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.00 GPa, Avg Poisson = nan"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 13.51 GPa, Avg Poisson = 0.204"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Diffusion": {
+        "status": "UNKNOWN"
+      },
+      "Thermodynamics": {
+        "status": "UNKNOWN"
+      },
+      "Vapor Pressure": {
+        "status": "UNKNOWN"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "UNKNOWN"
+      },
+      "Phase Diagram: bcc vs fcc": {
+        "status": "PASS",
+        "details": "Formation Energy = 1.584 eV"
+      }
+    }
+  },
+  {
+    "Element": "Ag",
+    "Structure": "fcc",
+    "a_pred": 2.95,
+    "B_pred": 84.68,
+    "pass_count": 6,
+    "fail_count": 0,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "1 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -2.8248 eV at a=2.950 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 84.68 GPa, V0 = 18.07 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -2.8098 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.00 GPa, Avg Poisson = nan"
+      },
+      "Phase Diagram": {
+        "status": "PASS",
+        "details": "Found 13 boundary points."
+      }
+    }
+  },
+  {
+    "Element": "Mg",
+    "Structure": "hcp",
+    "a_pred": 3.21,
+    "B_pred": 39.17,
+    "pass_count": 12,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "2 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -2.9976 eV at a=3.210 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 39.17 GPa, V0 = 45.54 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -2.9976 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Phonon": {
+        "status": "UNKNOWN"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 4.17 GPa, Avg Poisson = 0.268"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 5.1455e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -2.964 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 1.25 eV. P(max) = 4.80e-02 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 0.684 eV"
+      }
+    }
+  },
+  {
+    "Element": "Cu",
+    "Structure": "fcc",
+    "a_pred": 3.61,
+    "B_pred": 146.25,
+    "pass_count": 11,
+    "fail_count": 0,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "4 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -16.3896 eV at a=3.610 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 146.25 GPa, V0 = 47.37 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -16.3896 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 4.12 GPa, Avg Poisson = 0.392"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 8.27 GPa, Avg Poisson = 0.248"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 9.8764e-07 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -2.797 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 1.48 eV. P(max) = 3.34e-03 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 0.675 eV"
+      }
+    }
+  },
+  {
+    "Element": "Au",
+    "Structure": "fcc",
+    "a_pred": 2.943,
+    "B_pred": 129.69,
+    "pass_count": 12,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "1 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -3.2699 eV at a=2.943 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 129.69 GPa, V0 = 18.15 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Ran 10 steps. Avg Temp = 282.2 K"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -3.2363 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.00 GPa, Avg Poisson = nan"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 2.74 GPa, Avg Poisson = 0.374"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 5.2633e-07 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -3.225 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 1.45 eV. P(max) = 5.18e-03 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 0.407 eV"
+      }
+    }
+  },
+  {
+    "Element": "Ti",
+    "Structure": "hcp",
+    "a_pred": 2.95,
+    "B_pred": 102.51,
+    "pass_count": 9,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "2 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -15.6638 eV at a=2.950 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 102.51 GPa, V0 = 34.48 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -15.6638 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 1.8145e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -16.288 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 2.48 eV. P(max) = 3.14e-08 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 1.075 eV"
+      }
+    }
+  },
+  {
+    "Element": "Ni",
+    "Structure": "fcc",
+    "a_pred": 3.52,
+    "B_pred": 195.33,
+    "pass_count": 11,
+    "fail_count": 0,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "4 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -23.0880 eV at a=3.520 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 195.33 GPa, V0 = 43.13 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -23.0880 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 8.54 GPa, Avg Poisson = 0.329"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 13.51 GPa, Avg Poisson = 0.204"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 3.0053e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -15.623 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 4.34 eV. P(max) = 1.28e-17 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 1.234 eV"
+      }
+    }
+  },
+  {
+    "Element": "Ni",
+    "Structure": "bcc",
+    "a_pred": 2.702,
+    "B_pred": 108.35,
+    "pass_count": 12,
+    "fail_count": 2,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "1 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -7.6877 eV at a=2.702 \u00c3\u2026"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Ran 10 steps. Avg Temp = 302.8 K"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 108.35 GPa, V0 = 17.19 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -7.4054 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.09 GPa, Avg Poisson = -0.003"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 4.47 GPa, Avg Poisson = 0.329"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: True"
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 3.0812e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -7.364 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 3.92 eV. P(max) = 1.81e-15 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 1.774 eV"
+      },
+      "Phase Diagram: hcp vs bcc": {
+        "status": "UNKNOWN"
+      },
+      "Phase Diagram": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      }
+    }
+  },
+  {
+    "Element": "Zn",
+    "Structure": "hcp",
+    "a_pred": 2.66,
+    "B_pred": 62.08,
+    "pass_count": 9,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "2 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -2.4960 eV at a=2.660 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 62.08 GPa, V0 = 30.44 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -2.4960 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 2.0062e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -22.967 eV, Cv > 0"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 3.66 eV. P(max) = 3.66e-14 Pa"
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 1.629 eV"
+      }
+    }
+  },
+  {
+    "Element": "Ag",
+    "Structure": "fcc",
+    "a_pred": 4.172,
+    "B_pred": 84.69,
+    "pass_count": 12,
+    "fail_count": 0,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "4 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -11.2991 eV at a=4.172 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 84.69 GPa, V0 = 72.30 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -11.2392 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 2.14 GPa, Avg Poisson = 0.389"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 4.17 GPa, Avg Poisson = 0.268"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Ran 10 steps. Avg Temp = 332.3 K"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 1.8300e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -2.476 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 1.18 eV. P(max) = 1.19e-01 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 0.292 eV"
+      }
+    }
+  },
+  {
+    "Element": "Cr",
+    "Structure": "bcc",
+    "a_pred": 2.494,
+    "B_pred": 227.28,
+    "pass_count": 11,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "1 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -9.6172 eV at a=2.494 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 227.28 GPa, V0 = 11.64 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -9.6172 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.10 GPa, Avg Poisson = -0.002"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 9.41 GPa, Avg Poisson = 0.314"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 1.2164e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -11.190 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 1.48 eV. P(max) = 3.34e-03 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 0.700 eV"
+      }
+    }
+  },
+  {
+    "Element": "Au",
+    "Structure": "fcc",
+    "a_pred": 4.162,
+    "B_pred": 129.7,
+    "pass_count": 12,
+    "fail_count": 0,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "4 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -13.0795 eV at a=4.162 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 129.70 GPa, V0 = 72.58 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -12.9452 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 1.81 GPa, Avg Poisson = 0.429"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 2.74 GPa, Avg Poisson = 0.374"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Ran 10 steps. Avg Temp = 288.9 K"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 1.8224e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -9.583 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 3.55 eV. P(max) = 1.28e-13 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 2.850 eV"
+      }
+    }
+  },
+  {
+    "Element": "Mo",
+    "Structure": "bcc",
+    "a_pred": 2.728,
+    "B_pred": 258.48,
+    "pass_count": 11,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "1 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -10.8454 eV at a=2.728 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 258.48 GPa, V0 = 15.90 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -10.8454 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.02 GPa, Avg Poisson = -0.004"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 8.26 GPa, Avg Poisson = 0.350"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 4.9579e-07 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -12.899 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 1.45 eV. P(max) = 5.18e-03 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 0.477 eV"
+      }
+    }
+  },
+  {
+    "Element": "Ti",
+    "Structure": "hcp",
+    "a_pred": 2.95,
+    "B_pred": 102.51,
+    "pass_count": 10,
+    "fail_count": 0,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "2 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -15.6638 eV at a=2.950 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 102.51 GPa, V0 = 34.48 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -15.6638 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Ran 10 steps. Avg Temp = 299.7 K"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 1.3454e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -10.816 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 5.68 eV. P(max) = 2.36e-24 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 3.440 eV"
+      }
+    }
+  },
+  {
+    "Element": "W",
+    "Structure": "bcc",
+    "a_pred": 2.791,
+    "B_pred": 281.78,
+    "pass_count": 11,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "1 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -12.9427 eV at a=2.791 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 281.78 GPa, V0 = 16.24 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -12.9424 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = -0.00 GPa, Avg Poisson = -0.004"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 10.22 GPa, Avg Poisson = 0.342"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 3.0244e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -15.623 eV, Cv > 0"
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 4.34 eV. P(max) = 1.28e-17 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 1.234 eV"
+      }
+    }
+  },
+  {
+    "Element": "W",
+    "Structure": "bcc",
+    "a_pred": 3.12,
+    "B_pred": 108.35,
+    "pass_count": 12,
+    "fail_count": 0,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "2 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -15.3754 eV at a=3.120 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 108.35 GPa, V0 = 34.37 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -14.8107 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = -1.18 GPa, Avg Poisson = 0.438"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 4.47 GPa, Avg Poisson = 0.329"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: True"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Ran 10 steps. Avg Temp = 266.2 K"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 9.2891e-07 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -12.923 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 7.27 eV. P(max) = 2.38e-32 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 4.070 eV"
+      }
+    }
+  },
+  {
+    "Element": "Pb",
+    "Structure": "fcc",
+    "a_pred": 3.57,
+    "B_pred": 32.55,
+    "pass_count": 12,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "1 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -3.6986 eV at a=3.570 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 32.55 GPa, V0 = 32.43 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -3.6874 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.00 GPa, Avg Poisson = nan"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.90 GPa, Avg Poisson = 0.379"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 2.9414e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -14.729 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 3.92 eV. P(max) = 1.81e-15 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 1.208 eV"
+      },
+      "Phase Diagram: hcp vs bcc": {
+        "status": "UNKNOWN"
+      },
+      "Phase Diagram": {
+        "status": "PASS",
+        "details": "Found 0 boundary points."
+      }
+    }
+  },
+  {
+    "Element": "Zn",
+    "Structure": "hcp",
+    "a_pred": 2.66,
+    "B_pred": 62.08,
+    "pass_count": 10,
+    "fail_count": 0,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "2 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -2.4960 eV at a=2.660 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 62.08 GPa, V0 = 30.44 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -2.4960 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 4.9370e-07 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -3.700 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 1.42 eV. P(max) = 6.63e-03 Pa"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Ran 10 steps. Avg Temp = 288.2 K"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 0.402 eV"
+      }
+    }
+  },
+  {
+    "Element": "Li",
+    "Structure": "bcc",
+    "a_pred": 2.962,
+    "B_pred": 12.04,
+    "pass_count": 11,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "1 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -1.9053 eV at a=2.962 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 12.04 GPa, V0 = 20.15 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -1.9034 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.02 GPa, Avg Poisson = -0.013"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.73 GPa, Avg Poisson = 0.270"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 1.8920e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -2.476 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 1.18 eV. P(max) = 1.19e-01 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 0.292 eV"
+      }
+    }
+  },
+  {
+    "Element": "Cr",
+    "Structure": "bcc",
+    "a_pred": 2.88,
+    "B_pred": 227.34,
+    "pass_count": 9,
+    "fail_count": 0,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "2 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -19.2344 eV at a=2.880 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 227.34 GPa, V0 = 23.28 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -19.2344 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 15.71 GPa, Avg Poisson = 0.207"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 1.7820e-05 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -1.887 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 0.91 eV. P(max) = 2.67e+00 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 0.551 eV"
+      }
+    }
+  },
+  {
+    "Element": "Cr",
+    "Structure": "fcc",
+    "a_pred": 2.206,
+    "B_pred": 13.29,
+    "pass_count": 14,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "1 atoms generated."
+      },
+      "Tensile Test [111]": {
+        "status": "UNKNOWN"
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -0.6123 eV at a=2.206 \u00c3\u2026"
+      },
+      "Phonon": {
+        "status": "UNKNOWN"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 13.29 GPa, V0 = 20.15 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -0.1859 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.00 GPa, Avg Poisson = nan"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: True"
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 1.9039e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -19.167 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 3.55 eV. P(max) = 1.28e-13 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 2.704 eV"
+      }
+    }
+  },
+  {
+    "Element": "Mo",
+    "Structure": "bcc",
+    "a_pred": 3.15,
+    "B_pred": 258.48,
+    "pass_count": 12,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "2 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -21.6908 eV at a=3.150 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 258.48 GPa, V0 = 31.80 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -21.6908 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 14.39 GPa, Avg Poisson = 0.293"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 8.26 GPa, Avg Poisson = 0.350"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Ran 10 steps. Avg Temp = 287.9 K"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 2.9534e-05 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -0.054 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = -0.81 eV. P(max) = 1.21e+09 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 0.518 eV"
+      },
+      "Phase Diagram: bcc vs fcc": {
+        "status": "UNKNOWN"
+      },
+      "Phase Diagram": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      }
+    }
+  },
+  {
+    "Element": "K",
+    "Structure": "bcc",
+    "a_pred": 4.62,
+    "B_pred": 3.87,
+    "pass_count": 11,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "1 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -1.0720 eV at a=4.620 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 3.87 GPa, V0 = 75.46 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -1.0704 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.01 GPa, Avg Poisson = 0.118"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.32 GPa, Avg Poisson = 0.280"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: True"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 1.3214e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -21.633 eV, Cv > 0"
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 5.68 eV. P(max) = 2.36e-24 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 3.028 eV"
+      }
+    }
+  },
+  {
+    "Element": "W",
+    "Structure": "bcc",
+    "a_pred": 3.223,
+    "B_pred": 281.78,
+    "pass_count": 12,
+    "fail_count": 0,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "2 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -25.8854 eV at a=3.223 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 281.78 GPa, V0 = 32.49 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -25.8847 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 11.67 GPa, Avg Poisson = 0.327"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 10.21 GPa, Avg Poisson = 0.342"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Ran 10 steps. Avg Temp = 306.2 K"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 2.9668e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -1.082 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 0.04 eV. P(max) = 6.11e+04 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 0.027 eV"
+      }
+    }
+  },
+  {
+    "Element": "Ca",
+    "Structure": "fcc",
+    "a_pred": 3.867,
+    "B_pred": 16.5,
+    "pass_count": 11,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "1 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -1.9940 eV at a=3.867 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 16.50 GPa, V0 = 42.06 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -1.9935 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.00 GPa, Avg Poisson = nan"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 1.29 GPa, Avg Poisson = 0.202"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 8.6317e-07 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -25.846 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 7.27 eV. P(max) = 2.38e-32 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 3.541 eV"
+      }
+    }
+  },
+  {
+    "Element": "Pb",
+    "Structure": "fcc",
+    "a_pred": 5.049,
+    "B_pred": 32.58,
+    "pass_count": 8,
+    "fail_count": 0,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "4 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -14.7944 eV at a=5.049 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 32.58 GPa, V0 = 129.71 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -14.7497 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 2.5560e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -1.999 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 1.04 eV. P(max) = 5.81e-01 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 0.632 eV"
+      }
+    }
+  },
+  {
+    "Element": "Pb",
+    "Structure": "bcc",
+    "a_pred": 2.702,
+    "B_pred": 14.34,
+    "pass_count": 15,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "1 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy 1.1707 eV at a=2.702 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 14.34 GPa, V0 = 41.99 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = 1.9750 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.03 GPa, Avg Poisson = -0.008"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 1.37 GPa, Avg Poisson = 0.153"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: True"
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Ran 10 steps. Avg Temp = 272.9 K"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 4.7000e-07 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -14.800 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 1.42 eV. P(max) = 6.63e-03 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 0.258 eV"
+      }
+    }
+  },
+  {
+    "Element": "Li",
+    "Structure": "bcc",
+    "a_pred": 3.42,
+    "B_pred": 12.04,
+    "pass_count": 11,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "2 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -3.8106 eV at a=3.420 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 12.04 GPa, V0 = 40.29 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -3.8069 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.08 GPa, Avg Poisson = 0.430"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.73 GPa, Avg Poisson = 0.270"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: True"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 4.8917e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx 2.011 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = -2.93 eV. P(max) = 5.82e+19 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 0.537 eV"
+      },
+      "Phase Diagram: fcc vs bcc": {
+        "status": "UNKNOWN"
+      },
+      "Phase Diagram": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      }
+    }
+  },
+  {
+    "Element": "Pt",
+    "Structure": "fcc",
+    "a_pred": 2.827,
+    "B_pred": 234.65,
+    "pass_count": 12,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "1 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -6.0512 eV at a=2.827 \u00c3\u2026"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Ran 10 steps. Avg Temp = 248.7 K"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 234.65 GPa, V0 = 15.73 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -6.0318 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.00 GPa, Avg Poisson = nan"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 4.14 GPa, Avg Poisson = 0.401"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 1.6468e-05 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -3.775 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 0.91 eV. P(max) = 2.67e+00 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 0.496 eV"
+      }
+    }
+  },
+  {
+    "Element": "Pt",
+    "Structure": "fcc",
+    "a_pred": 3.12,
+    "B_pred": 13.29,
+    "pass_count": 12,
+    "fail_count": 0,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "4 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -2.4493 eV at a=3.120 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 13.29 GPa, V0 = 80.61 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -0.7435 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = -0.05 GPa, Avg Poisson = 0.487"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 1.26 GPa, Avg Poisson = 0.137"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: True"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Ran 10 steps. Avg Temp = 250.2 K"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 6.1819e-07 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -6.013 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 3.33 eV. P(max) = 1.71e-12 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 0.732 eV"
+      }
+    }
+  },
+  {
+    "Element": "Pd",
+    "Structure": "fcc",
+    "a_pred": 2.806,
+    "B_pred": 164.03,
+    "pass_count": 15,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "1 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -5.1915 eV at a=2.806 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 164.03 GPa, V0 = 15.43 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -5.1742 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.00 GPa, Avg Poisson = nan"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 7.75 GPa, Avg Poisson = 0.276"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Diffusion": {
+        "status": "UNKNOWN"
+      },
+      "Thermodynamics": {
+        "status": "UNKNOWN"
+      },
+      "Vapor Pressure": {
+        "status": "UNKNOWN"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "UNKNOWN"
+      },
+      "Phase Diagram: bcc vs fcc": {
+        "status": "PASS",
+        "details": "Formation Energy = 1.292 eV"
+      }
+    }
+  },
+  {
+    "Element": "Co",
+    "Structure": "hcp",
+    "a_pred": 2.51,
+    "B_pred": 154.28,
+    "pass_count": 6,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "2 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -14.1432 eV at a=2.510 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 154.28 GPa, V0 = 21.64 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -14.1432 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Phase Diagram": {
+        "status": "PASS",
+        "details": "Found 11 boundary points."
+      }
+    }
+  },
+  {
+    "Element": "K",
+    "Structure": "bcc",
+    "a_pred": 5.335,
+    "B_pred": 3.75,
+    "pass_count": 12,
+    "fail_count": 0,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "2 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -2.1440 eV at a=5.335 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 3.75 GPa, V0 = 150.89 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -2.1408 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.00 GPa, Avg Poisson = 0.515"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.32 GPa, Avg Poisson = 0.280"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: True"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Ran 10 steps. Avg Temp = 269.8 K"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 2.9891e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -2.163 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 0.04 eV. P(max) = 6.11e+04 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 0.025 eV"
+      }
+    }
+  },
+  {
+    "Element": "Ca",
+    "Structure": "fcc",
+    "a_pred": 5.468,
+    "B_pred": 16.49,
+    "pass_count": 12,
+    "fail_count": 0,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "4 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -7.9761 eV at a=5.468 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 16.49 GPa, V0 = 168.22 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -7.9741 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.84 GPa, Avg Poisson = 0.326"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 1.29 GPa, Avg Poisson = 0.202"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 1.8560e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -14.099 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 4.15 eV. P(max) = 1.27e-16 Pa"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Ran 10 steps. Avg Temp = 293.6 K"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 1.654 eV"
+      }
+    }
+  },
+  {
+    "Element": "Ca",
+    "Structure": "fcc",
+    "a_pred": 2.206,
+    "B_pred": 159.74,
+    "pass_count": 11,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "1 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -5.9489 eV at a=2.206 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 159.74 GPa, V0 = 10.86 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -4.7893 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.00 GPa, Avg Poisson = nan"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 11.69 GPa, Avg Poisson = 0.155"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 2.5734e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -7.997 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 1.04 eV. P(max) = 5.81e-01 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 0.520 eV"
+      }
+    }
+  },
+  {
+    "Element": "Ca",
+    "Structure": "bcc",
+    "a_pred": 3.12,
+    "B_pred": 14.34,
+    "pass_count": 16,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "2 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy 2.3414 eV at a=3.120 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 14.34 GPa, V0 = 83.97 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = 3.9500 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = -0.06 GPa, Avg Poisson = 0.475"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 1.37 GPa, Avg Poisson = 0.153"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: True"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Ran 10 steps. Avg Temp = 282.9 K"
+      },
+      "Diffusion": {
+        "status": "UNKNOWN"
+      },
+      "Thermodynamics": {
+        "status": "UNKNOWN"
+      },
+      "Vapor Pressure": {
+        "status": "UNKNOWN"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "UNKNOWN"
+      },
+      "Phase Diagram: fcc vs bcc": {
+        "status": "PASS",
+        "details": "Formation Energy = 1.815 eV"
+      },
+      "Phase Diagram: hcp vs fcc": {
+        "status": "UNKNOWN"
+      },
+      "Phase Diagram": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      }
+    }
+  },
+  {
+    "Element": "V",
+    "Structure": "bcc",
+    "a_pred": 2.615,
+    "B_pred": 180.48,
+    "pass_count": 8,
+    "fail_count": 0,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "1 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -9.0853 eV at a=2.615 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 180.48 GPa, V0 = 13.52 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -9.0853 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.03 GPa, Avg Poisson = 0.000"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 3.19 GPa, Avg Poisson = 0.432"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Phase Diagram": {
+        "status": "PASS",
+        "details": "Found 8 boundary points."
+      }
+    }
+  },
+  {
+    "Element": "Pt",
+    "Structure": "fcc",
+    "a_pred": 3.998,
+    "B_pred": 234.64,
+    "pass_count": 12,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "4 atoms generated."
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -24.2046 eV at a=3.998 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 234.64 GPa, V0 = 62.92 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -24.1274 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 3.32 GPa, Avg Poisson = 0.436"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 4.14 GPa, Avg Poisson = 0.401"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Ran 10 steps. Avg Temp = 281.3 K"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 2.3455e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -9.054 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 4.45 eV. P(max) = 3.89e-18 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 2.678 eV"
+      }
+    }
+  },
+  {
+    "Element": "Nb",
+    "Structure": "bcc",
+    "a_pred": 2.858,
+    "B_pred": 173.71,
+    "pass_count": 11,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "1 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -10.1007 eV at a=2.858 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 173.71 GPa, V0 = 18.27 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -10.1007 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.02 GPa, Avg Poisson = -0.000"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 3.92 GPa, Avg Poisson = 0.407"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 6.6629e-07 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -24.053 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 3.33 eV. P(max) = 1.71e-12 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 0.953 eV"
+      }
+    }
+  },
+  {
+    "Element": "Pd",
+    "Structure": "fcc",
+    "a_pred": 3.968,
+    "B_pred": 164.03,
+    "pass_count": 11,
+    "fail_count": 0,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "4 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -20.7659 eV at a=3.968 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 164.03 GPa, V0 = 61.74 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -20.6967 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 4.37 GPa, Avg Poisson = 0.380"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 7.75 GPa, Avg Poisson = 0.276"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 1.6252e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -10.078 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 5.88 eV. P(max) = 2.44e-25 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 2.764 eV"
+      }
+    }
+  },
+  {
+    "Element": "Ta",
+    "Structure": "bcc",
+    "a_pred": 2.867,
+    "B_pred": 192.14,
+    "pass_count": 12,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "1 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -11.8558 eV at a=2.867 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 192.14 GPa, V0 = 18.32 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -11.8558 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.05 GPa, Avg Poisson = 0.001"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Ran 10 steps. Avg Temp = 297.6 K"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 6.63 GPa, Avg Poisson = 0.375"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 5.6434e-07 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -11.844 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 6.97 eV. P(max) = 7.31e-31 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 2.910 eV"
+      }
+    }
+  },
+  {
+    "Element": "Be",
+    "Structure": "hcp",
+    "a_pred": 2.29,
+    "B_pred": 123.76,
+    "pass_count": 9,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "2 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -7.4579 eV at a=2.290 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 123.76 GPa, V0 = 15.89 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -7.4579 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 1.1062e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -20.604 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 2.59 eV. P(max) = 8.55e-09 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 1.412 eV"
+      }
+    }
+  },
+  {
+    "Element": "Co",
+    "Structure": "hcp",
+    "a_pred": 2.51,
+    "B_pred": 154.28,
+    "pass_count": 10,
+    "fail_count": 0,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "2 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -14.1432 eV at a=2.510 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 154.28 GPa, V0 = 21.64 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -14.1432 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Ran 10 steps. Avg Temp = 320.1 K"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 1.3900e-05 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -7.322 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 3.55 eV. P(max) = 1.33e-13 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 1.069 eV"
+      }
+    }
+  },
+  {
+    "Element": "Cd",
+    "Structure": "hcp",
+    "a_pred": 3.04,
+    "B_pred": 37.13,
+    "pass_count": 9,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "2 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -1.7951 eV at a=3.040 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 37.13 GPa, V0 = 46.11 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -1.7716 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 2.3518e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -14.099 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 4.15 eV. P(max) = 1.27e-16 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 1.654 eV"
+      }
+    }
+  },
+  {
+    "Element": "Cd",
+    "Structure": "fcc",
+    "a_pred": 3.12,
+    "B_pred": 159.74,
+    "pass_count": 11,
+    "fail_count": 0,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "4 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -23.7957 eV at a=3.120 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 159.74 GPa, V0 = 43.46 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -19.1571 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 6.35 GPa, Avg Poisson = 0.311"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 11.68 GPa, Avg Poisson = 0.155"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 9.9669e-07 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -1.768 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 0.72 eV. P(max) = 2.38e+01 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 0.199 eV"
+      }
+    }
+  },
+  {
+    "Element": "C",
+    "Structure": "diamond",
+    "a_pred": 2.524,
+    "B_pred": 430.66,
+    "pass_count": 10,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "2 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -18.1810 eV at a=2.524 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 430.66 GPa, V0 = 11.42 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -18.1810 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Ran 10 steps. Avg Temp = 216.8 K"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 8.4347e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -17.945 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 6.66 eV. P(max) = 2.86e-29 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 5.520 eV"
+      }
+    }
+  },
+  {
+    "Element": "C",
+    "Structure": "sc",
+    "a_pred": 2.88,
+    "B_pred": -11.17,
+    "pass_count": 13,
+    "fail_count": 2,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "1 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -2.7514 eV at a=2.880 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = -11.17 GPa, V0 = 70.59 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -2.4785 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: True"
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Diffusion": {
+        "status": "UNKNOWN"
+      },
+      "Thermodynamics": {
+        "status": "UNKNOWN"
+      },
+      "Vapor Pressure": {
+        "status": "UNKNOWN"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "UNKNOWN"
+      },
+      "Phase Diagram: hcp vs fcc": {
+        "status": "PASS",
+        "details": "Formation Energy = -0.486 eV"
+      },
+      "Phase Diagram: diamond vs sc": {
+        "status": "UNKNOWN"
+      },
+      "Phase Diagram": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      }
+    }
+  },
+  {
+    "Element": "Si",
+    "Structure": "diamond",
+    "a_pred": 3.84,
+    "B_pred": 85.85,
+    "pass_count": 6,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "2 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -10.8140 eV at a=3.840 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 85.85 GPa, V0 = 40.88 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -10.8140 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Phase Diagram": {
+        "status": "PASS",
+        "details": "Found 0 boundary points."
+      }
+    }
+  },
+  {
+    "Element": "V",
+    "Structure": "bcc",
+    "a_pred": 3.02,
+    "B_pred": 180.48,
+    "pass_count": 12,
+    "fail_count": 0,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "2 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -18.1707 eV at a=3.020 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 180.48 GPa, V0 = 27.03 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -18.1707 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 5.81 GPa, Avg Poisson = 0.359"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 3.19 GPa, Avg Poisson = 0.432"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Ran 10 steps. Avg Temp = 300.4 K"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 4.6130e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -10.748 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 3.25 eV. P(max) = 4.07e-12 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 2.969 eV"
+      }
+    }
+  },
+  {
+    "Element": "Ge",
+    "Structure": "diamond",
+    "a_pred": 4.082,
+    "B_pred": 59.4,
+    "pass_count": 9,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "2 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -9.0460 eV at a=4.082 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 59.40 GPa, V0 = 47.70 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -9.0228 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 2.5283e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -18.109 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 4.45 eV. P(max) = 3.89e-18 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 2.651 eV"
+      }
+    }
+  },
+  {
+    "Element": "Nb",
+    "Structure": "bcc",
+    "a_pred": 3.3,
+    "B_pred": 173.71,
+    "pass_count": 12,
+    "fail_count": 0,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "2 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -20.2014 eV at a=3.300 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 173.71 GPa, V0 = 36.54 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -20.2014 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 6.70 GPa, Avg Poisson = 0.351"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 3.92 GPa, Avg Poisson = 0.407"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Ran 10 steps. Avg Temp = 303.8 K"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 1.5127e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -9.001 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 2.29 eV. P(max) = 2.79e-07 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 2.077 eV"
+      }
+    }
+  },
+  {
+    "Element": "Sn",
+    "Structure": "fcc",
+    "a_pred": 2.206,
+    "B_pred": 37.27,
+    "pass_count": 11,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "1 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy 21.4676 eV at a=2.206 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 37.27 GPa, V0 = 28.32 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = 30.0033 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.00 GPa, Avg Poisson = nan"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.77 GPa, Avg Poisson = 0.441"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 1.7222e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -20.156 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 5.88 eV. P(max) = 2.44e-25 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 2.437 eV"
+      }
+    }
+  },
+  {
+    "Element": "Ta",
+    "Structure": "bcc",
+    "a_pred": 3.31,
+    "B_pred": 192.14,
+    "pass_count": 12,
+    "fail_count": 0,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "2 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -23.7116 eV at a=3.310 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 192.14 GPa, V0 = 36.65 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -23.7116 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = 4.14 GPa, Avg Poisson = 0.407"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 6.63 GPa, Avg Poisson = 0.375"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Ran 10 steps. Avg Temp = 300.9 K"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 6.5622e-07 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -23.689 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 6.97 eV. P(max) = 7.31e-31 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 2.466 eV"
+      }
+    }
+  },
+  {
+    "Element": "Be",
+    "Structure": "hcp",
+    "a_pred": 2.29,
+    "B_pred": 123.76,
+    "pass_count": 10,
+    "fail_count": 0,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "2 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -7.4579 eV at a=2.290 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 123.76 GPa, V0 = 15.89 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -7.4579 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Ran 10 steps. Avg Temp = 233.5 K"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 1.4953e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx 30.158 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = -32.32 eV. P(max) = 7.29e+167 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 0.275 eV"
+      }
+    }
+  },
+  {
+    "Element": "Be",
+    "Structure": "diamond",
+    "a_pred": 2.036,
+    "B_pred": -0.42,
+    "pass_count": 9,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "2 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy 168.2769 eV at a=2.036 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = -0.42 GPa, V0 = 3.49 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = 197.0741 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: True"
+      },
+      "Molecular Dynamics": {
+        "status": "FAIL",
+        "details": "[Errno 22] Invalid argument"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 1.2361e-05 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -7.322 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 3.55 eV. P(max) = 1.33e-13 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 1.069 eV"
+      }
+    }
+  },
+  {
+    "Element": "Cd",
+    "Structure": "hcp",
+    "a_pred": 3.04,
+    "B_pred": 37.13,
+    "pass_count": 10,
+    "fail_count": 0,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "2 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -1.7951 eV at a=3.040 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 37.13 GPa, V0 = 46.11 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -1.7716 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Ran 10 steps. Avg Temp = 304.2 K"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 8.9305e-07 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -1.768 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 0.72 eV. P(max) = 2.38e+01 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 0.199 eV"
+      }
+    }
+  },
+  {
+    "Element": "C",
+    "Structure": "diamond",
+    "a_pred": 3.57,
+    "B_pred": 430.66,
+    "pass_count": 14,
+    "fail_count": 1,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "8 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -72.7240 eV at a=3.570 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 430.66 GPa, V0 = 45.69 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -72.7240 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Ran 10 steps. Avg Temp = 145.5 K"
+      },
+      "Diffusion": {
+        "status": "UNKNOWN"
+      },
+      "Thermodynamics": {
+        "status": "UNKNOWN"
+      },
+      "Vapor Pressure": {
+        "status": "UNKNOWN"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "UNKNOWN"
+      },
+      "Phase Diagram: fcc vs diamond": {
+        "status": "UNKNOWN"
+      },
+      "Phase Diagram": {
+        "status": "PASS",
+        "details": "Formation Energy = 5.643 eV"
+      }
+    }
+  },
+  {
+    "Element": "C",
+    "Structure": "sc",
+    "a_pred": 2.88,
+    "B_pred": -11.17,
+    "pass_count": 11,
+    "fail_count": 0,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "1 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -2.7514 eV at a=2.880 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = -11.17 GPa, V0 = 70.59 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -2.4785 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: True"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Ran 10 steps. Avg Temp = 316.4 K"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 6.6407e-04 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -2.471 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 0.04 eV. P(max) = 6.02e+04 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = -0.486 eV"
+      },
+      "Phase Diagram: diamond vs sc": {
+        "status": "UNKNOWN"
+      },
+      "Phase Diagram": {
+        "status": "PASS",
+        "details": "Found 0 boundary points."
+      }
+    }
+  },
+  {
+    "Element": "Si",
+    "Structure": "diamond",
+    "a_pred": 5.43,
+    "B_pred": 85.85,
+    "pass_count": 10,
+    "fail_count": 0,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "8 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -43.2560 eV at a=5.430 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 85.85 GPa, V0 = 163.54 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -43.2560 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Ran 10 steps. Avg Temp = 254.3 K"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 5.0231e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -42.990 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 3.25 eV. P(max) = 4.07e-12 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 2.678 eV"
+      }
+    }
+  },
+  {
+    "Element": "Ge",
+    "Structure": "diamond",
+    "a_pred": 5.773,
+    "B_pred": 59.4,
+    "pass_count": 10,
+    "fail_count": 0,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "8 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy -36.1838 eV at a=5.773 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 59.40 GPa, V0 = 190.81 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = -36.0912 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Ran 10 steps. Avg Temp = 291.9 K"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 1.3191e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx -36.003 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = 2.29 eV. P(max) = 2.79e-07 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 1.856 eV"
+      }
+    }
+  },
+  {
+    "Element": "Sn",
+    "Structure": "fcc",
+    "a_pred": 3.12,
+    "B_pred": 37.27,
+    "pass_count": 12,
+    "fail_count": 0,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "4 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy 85.8705 eV at a=3.120 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = 37.27 GPa, V0 = 113.28 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = 120.0133 eV, Fmax = 0.0000 eV/\u00c3\u2026"
+      },
+      "Tensile Test [001]": {
+        "status": "PASS",
+        "details": "Max Stress = -0.07 GPa, Avg Poisson = 0.468"
+      },
+      "Tensile Test [111]": {
+        "status": "PASS",
+        "details": "Max Stress = 0.77 GPa, Avg Poisson = 0.441"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: False"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Ran 10 steps. Avg Temp = 203.9 K"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 1.5683e-06 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx 120.632 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = -32.32 eV. P(max) = 7.29e+167 Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 0.083 eV"
+      }
+    }
+  },
+  {
+    "Element": "Sn",
+    "Structure": "diamond",
+    "a_pred": 2.88,
+    "B_pred": -0.42,
+    "pass_count": 10,
+    "fail_count": 0,
+    "modes": {
+      "3D Viewer Preparation": {
+        "status": "PASS",
+        "details": "8 atoms generated."
+      },
+      "Equilibrium Scan": {
+        "status": "PASS",
+        "details": "Min energy 673.1081 eV at a=2.880 \u00c3\u2026"
+      },
+      "Equation of State": {
+        "status": "PASS",
+        "details": "Bulk Modulus = -0.42 GPa, V0 = 13.98 \u00c3\u2026\u00c2\u00b3"
+      },
+      "Relaxation": {
+        "status": "PASS",
+        "details": "Energy = 788.2964 eV, Fmax = 0.0002 eV/\u00c3\u2026"
+      },
+      "Phonon": {
+        "status": "PASS",
+        "details": "Has Imaginary Frequencies: True"
+      },
+      "Molecular Dynamics (NVT)": {
+        "status": "PASS",
+        "details": "Ran 10 steps. Avg Temp = 4018.4 K"
+      },
+      "Diffusion": {
+        "status": "PASS",
+        "details": "D = 1.2798e+01 cm\u00c2\u00b2/s"
+      },
+      "Thermodynamics": {
+        "status": "PASS",
+        "details": "G(300K) approx 788.078 eV, Cv > 0"
+      },
+      "Vapor Pressure": {
+        "status": "PASS",
+        "details": "H_vap = -100.85 eV. P(max) = inf Pa"
+      },
+      "Defect Analysis (Vacancy)": {
+        "status": "PASS",
+        "details": "Formation Energy = 0.000 eV"
+      },
+      "Phase Diagram: fcc vs diamond": {
+        "status": "UNKNOWN"
+      }
+    }
+  }
+]
