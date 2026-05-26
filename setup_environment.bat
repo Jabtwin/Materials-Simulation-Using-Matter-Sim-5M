@@ -47,19 +47,22 @@ if %errorlevel% neq 0 (
 :: Force PATH refresh again just to be safe
 set "PATH=%ProgramFiles%\Python310\Scripts\;%ProgramFiles%\Python310\;%LocalAppData%\Programs\Python\Python310\Scripts\;%LocalAppData%\Programs\Python\Python310\;%PATH%"
 
-:: Re-verify Python
+:: Re-verify Python (Avoid nested IFs to prevent parse-time expansion bug)
 set "PYTHON_CMD=python"
 python -c "import sys" >nul 2>&1
-if %errorlevel% neq 0 (
-    set "PYTHON_CMD=py"
-    py -c "import sys" >nul 2>&1
-    if %errorlevel% neq 0 (
-        color 0C
-        echo [ERROR] Python installation failed or PATH not updated. Please install manually.
-        pause
-        exit /b
-    )
-)
+if %errorlevel% equ 0 goto :python_found
+
+set "PYTHON_CMD=py"
+py -c "import sys" >nul 2>&1
+if %errorlevel% equ 0 goto :python_found
+
+:: If both fail
+color 0C
+echo [ERROR] Python installation failed or PATH not updated. Please install manually.
+pause
+exit /b
+
+:python_found
 
 for /f "tokens=* trims=" %%i in ('%PYTHON_CMD% -c "import sys; print(f'{sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}')"') do set "PY_VER=%%i"
 color 0B
