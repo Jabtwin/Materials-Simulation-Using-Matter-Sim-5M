@@ -35,7 +35,7 @@ if %errorlevel% neq 0 (
         echo [OK] Python installed successfully.
         
         :: Refresh PATH in current session (simple workaround)
-        set "PATH=%ProgramFiles%\Python310\Scripts\;%ProgramFiles%\Python310\;%PATH%"
+        set "PATH=%ProgramFiles%\Python310\Scripts\;%ProgramFiles%\Python310\;%LocalAppData%\Programs\Python\Python310\Scripts\;%LocalAppData%\Programs\Python\Python310\;%PATH%"
     ) else (
         color 0C
         echo [ERROR] Failed to download Python.
@@ -44,16 +44,24 @@ if %errorlevel% neq 0 (
     )
 )
 
+:: Force PATH refresh again just to be safe
+set "PATH=%ProgramFiles%\Python310\Scripts\;%ProgramFiles%\Python310\;%LocalAppData%\Programs\Python\Python310\Scripts\;%LocalAppData%\Programs\Python\Python310\;%PATH%"
+
 :: Re-verify Python
+set "PYTHON_CMD=python"
 python -c "import sys" >nul 2>&1
 if %errorlevel% neq 0 (
-    color 0C
-    echo [ERROR] Python installation failed or PATH not updated. Please install manually.
-    pause
-    exit /b
+    set "PYTHON_CMD=py"
+    py -c "import sys" >nul 2>&1
+    if %errorlevel% neq 0 (
+        color 0C
+        echo [ERROR] Python installation failed or PATH not updated. Please install manually.
+        pause
+        exit /b
+    )
 )
 
-for /f "tokens=* trims=" %%i in ('python -c "import sys; print(f'{sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}')"') do set "PY_VER=%%i"
+for /f "tokens=* trims=" %%i in ('%PYTHON_CMD% -c "import sys; print(f'{sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}')"') do set "PY_VER=%%i"
 color 0B
 echo [OK] Python detected! (Version: %PY_VER%)
 echo.
@@ -90,13 +98,13 @@ if "%MSVC_FOUND%"=="0" (
 :: 3. Install Python Dependencies
 echo.
 echo [1/2] Upgrading pip...
-python -m pip install --upgrade pip
+%PYTHON_CMD% -m pip install --upgrade pip
 
 echo.
 echo [2/2] Installing machine learning and GUI dependencies...
 echo (This may take 2-5 minutes depending on your network speed as PyTorch and MatterSim are large packages)
 echo.
-python -m pip install -r requirements.txt
+%PYTHON_CMD% -m pip install -r requirements.txt
 
 if %errorlevel% equ 0 (
     color 0A
