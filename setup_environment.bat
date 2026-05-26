@@ -8,7 +8,7 @@ if %errorLevel% neq 0 (
     color 0E
     echo [INFO] Administrator privileges are required to install Python and C++ Build Tools.
     echo Requesting Administrator privileges...
-    powershell -Command "Start-Process cmd -ArgumentList '/c \"%~dpnx0\"' -Verb RunAs"
+    powershell -Command "Start-Process cmd -ArgumentList '/k \"%~dpnx0\"' -Verb RunAs"
     exit /b
 )
 
