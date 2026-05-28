@@ -16,6 +16,7 @@ vib*/
 comprehensive_report*.md
 *.log
 *.png
+!images/*.png
 *.pdf
 
 # Environment and IDE

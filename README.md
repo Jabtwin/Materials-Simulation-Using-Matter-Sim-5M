@@ -23,12 +23,19 @@
 
 Here are some examples of the analysis and UI produced by MatterSim AI Materials Lab:
 
-<div align="center">
-  <img src="images/fe_bcc_eos.png" width="45%" alt="Equation of State">
-  <img src="images/fe_bcc_phonon.png" width="45%" alt="Phonon Analysis">
-  <br>
-  <img src="images/fe_bcc_mole.png" width="60%" alt="Molecular Dynamics">
-</div>
+### System Data Flow
+
+![System Data Flow Diagram](./images/Data%20flow%20diagram%20.png)
+
+### Simulation Results
+
+![Equation of State](./images/fe_bcc_eos.png)
+![Phonon Analysis](./images/fe_bcc_phonon.png)
+
+![Tensile Test Output](./images/fe_bcc_tensil_terminal.png)
+![Molecular Dynamics Analysis](./images/fe_bcc_molecular_dynamic.png)
+
+![Molecular Dynamics Structure](./images/fe_bcc_mole.png)
 
 ## 🚀 Getting Started
 
