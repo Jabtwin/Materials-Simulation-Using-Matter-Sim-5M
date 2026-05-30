@@ -44,7 +44,7 @@ MODE_COMPATIBILITY = {
     ],
     "compound": [
         # Compounds (e.g. NaCl): EOS, relaxation, thermodynamics valid
-        "3D Viewer", "Equation of State", "Relaxation", "Thermodynamics", "Vapor Pressure"
+        "3D Viewer", "Equilibrium Scan", "Equation of State", "Relaxation", "Tensile Test", "Thermodynamics", "Vapor Pressure", "Defect Analysis"
     ],
     "upload": ALL_MODES, # Allow all modes for custom uploaded structures
 }
@@ -1243,7 +1243,7 @@ class MatterSimApp(ctk.CTk):
                 idx = np.argmin(energies)
                 a_opt, E_min = a_vals[idx], energies[idx]
 
-            self.equi_res_label.configure(text=f"Equilibrium Scan: Optimal a: {a_opt:.3f} Ã…  |  Min Energy: {E_min:.4f} eV")
+            self.equi_res_label.configure(text=f"Equilibrium Scan: Optimal a: {a_opt:.3f} A  |  Min Energy: {E_min:.4f} eV")
             
         elif mode == "Equation of State":
             self.eos_ax.cla()
@@ -1262,8 +1262,8 @@ class MatterSimApp(ctk.CTk):
             self.eos_canvas.draw()
             
             # Update result label
-            self.eos_res_label.configure(text=f"Equation of State: Bulk Modulus (B0): {data['B_GPa']:.2f} GPa  |  Optimal V0: {data['v0']:.2f} Ã…Â³")
-            messagebox.showinfo("Equation of State", f"Bulk Modulus: {data['B_GPa']:.2f} GPa\nOptimal Volume: {data['v0']:.4f} Ã…Â³")
+            self.eos_res_label.configure(text=f"Equation of State: Bulk Modulus (B0): {data['B_GPa']:.2f} GPa  |  Optimal V0: {data['v0']:.2f} A^3")
+            messagebox.showinfo("Equation of State", f"Bulk Modulus: {data['B_GPa']:.2f} GPa\nOptimal Volume: {data['v0']:.4f} A^3")
 
         elif mode == "Tensile Test":
             self.tensile_ax.cla()
