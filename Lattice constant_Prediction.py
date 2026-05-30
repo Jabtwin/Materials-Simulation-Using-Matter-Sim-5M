@@ -11,7 +11,7 @@ import threading
 import queue
 import customtkinter as ctk
 import tkinter as tk
-from tkinter import messagebox
+from tkinter import messagebox, filedialog
 import numpy as np
 import matplotlib
 matplotlib.use("TkAgg")
@@ -46,6 +46,7 @@ MODE_COMPATIBILITY = {
         # Compounds (e.g. NaCl): EOS, relaxation, thermodynamics valid
         "3D Viewer", "Equation of State", "Relaxation", "Thermodynamics", "Vapor Pressure"
     ],
+    "upload": ALL_MODES, # Allow all modes for custom uploaded structures
 }
 
 # Tooltip explanations for disabled modes
@@ -273,11 +274,30 @@ class SearchableComboBox(ctk.CTkFrame):
         return super().cget(attr)
 
 
+class StdoutRedirector:
+    def __init__(self, target_label, root):
+        self.target_label = target_label
+        self.root = root
+        self.original_stdout = sys.stdout
+
+    def write(self, text):
+        self.original_stdout.write(text)
+        if "ETA:" in text or "%]" in text or "STEP" in text or "DEBUG:" in text or "WARNING:" in text or "Status:" in text:
+            clean_text = text.replace('\r', '').replace('\n', '').strip()
+            if clean_text:
+                self.root.after(0, self.target_label.configure, {"text": clean_text})
+                
+    def flush(self):
+        self.original_stdout.flush()
+
+
 class MatterSimApp(ctk.CTk):
     def __init__(self):
         super().__init__()
         self.title("MatterSim AI Materials Lab (Refactored)")
         self.geometry("1280x900")
+        
+        self.uploaded_file_path = None
         
         # Set application window and taskbar icon safely
         if os.path.exists("app.ico"):
@@ -302,6 +322,10 @@ class MatterSimApp(ctk.CTk):
         self._build_ui()
         self.protocol("WM_DELETE_WINDOW", self._safe_exit)
         self.after(100, self._process_queue)
+        
+        # Redirect stdout to capture logs for status label
+        self.stdout_redirector = StdoutRedirector(self.status_log_label, self)
+        sys.stdout = self.stdout_redirector
         
         # Signal splash screen to close
         if os.path.exists("splash.lock"):
@@ -344,6 +368,9 @@ class MatterSimApp(ctk.CTk):
         self.radio_compound = ctk.CTkRadioButton(self.sel_frame, text="Compound", variable=self.selection_type, value="compound", command=self._update_selection_widgets)
         self.radio_compound.grid(row=1, column=2, padx=10, pady=5)
         
+        self.radio_upload = ctk.CTkRadioButton(self.sel_frame, text="Upload File", variable=self.selection_type, value="upload", command=self._update_selection_widgets)
+        self.radio_upload.grid(row=1, column=3, padx=10, pady=5)
+        
         # Element inputs — searchable (Only solid elements with defined crystals)
         self.element_cb = SearchableComboBox(
             self.sel_frame,
@@ -378,6 +405,12 @@ class MatterSimApp(ctk.CTk):
         self.formula_entry = ctk.CTkEntry(self.sel_frame, placeholder_text="Formula (e.g. NaCl)")
         self.formula_entry.grid(row=4, column=0, padx=10, pady=5)
         
+        # Upload inputs
+        self.upload_btn = ctk.CTkButton(self.sel_frame, text="Browse File...", command=self._browse_file)
+        self.upload_btn.grid(row=5, column=0, padx=10, pady=5)
+        self.upload_lbl = ctk.CTkLabel(self.sel_frame, text="No file selected")
+        self.upload_lbl.grid(row=6, column=0, padx=10, pady=5)
+        
         # Calculation Mode
         ctk.CTkLabel(self.sel_frame, text="Calculation Mode:").grid(row=3, column=2, padx=10)
         self.mode_cb = ctk.CTkOptionMenu(self.sel_frame, values=[
@@ -392,6 +425,9 @@ class MatterSimApp(ctk.CTk):
         self.progress_bar = ctk.CTkProgressBar(self.sel_frame, mode="indeterminate")
         self.progress_bar.grid(row=5, column=3, padx=10, pady=5, sticky="ew")
         self.progress_bar.set(0)
+        
+        self.status_log_label = ctk.CTkLabel(self.sel_frame, text="Status: Ready", text_color="gray", font=("Arial", 12))
+        self.status_log_label.grid(row=6, column=3, padx=10, pady=5, sticky="w")
         
         # --- Output Tabs ---
         self.tabview = ctk.CTkTabview(self.main_frame, width=1200, height=600)
@@ -434,6 +470,7 @@ class MatterSimApp(ctk.CTk):
         self.element_cb.configure(state="normal" if sel == "element" else "disabled")
         self.molecule_cb.configure(state="normal" if sel == "molecule" else "disabled")
         self.formula_entry.configure(state="normal" if sel == "compound" else "disabled")
+        self.upload_btn.configure(state="normal" if sel == "upload" else "disabled")
         
         # 2. Structure Dropdown - ABSOLUTE ENFORCEMENT
         if mode == "Phase Diagram":
@@ -448,6 +485,20 @@ class MatterSimApp(ctk.CTk):
             self.orient_cb.configure(state="disabled")
             
         self._update_available_modes(sel)
+        
+    def _browse_file(self):
+        filetypes = (
+            ('Structure files', '*.cif *.xyz *.POSCAR *.vasp'),
+            ('All files', '*.*')
+        )
+        filename = filedialog.askopenfilename(
+            title='Open a structure file',
+            filetypes=filetypes
+        )
+        if filename:
+            self.uploaded_file_path = filename
+            basename = os.path.basename(filename)
+            self.upload_lbl.configure(text=f"Selected: {basename}")
 
     def _update_available_modes(self, selection):
         """Dynamic UI filtering: Hide incompatible tabs for Element, Molecule, and Compound."""
@@ -545,6 +596,11 @@ class MatterSimApp(ctk.CTk):
                     atoms = bulk(element, phase, a=a_guess, cubic=use_cubic)
             elif selection == "molecule":
                 atoms = molecule(self.molecule_cb.get())
+            elif selection == "upload":
+                if not self.uploaded_file_path:
+                    raise ValueError("No file uploaded!")
+                from ase.io import read
+                atoms = read(self.uploaded_file_path)
             else:
                 formula = self.formula_entry.get().strip()
                 if not formula: return
@@ -817,15 +873,25 @@ class MatterSimApp(ctk.CTk):
             "kcl":   ("rocksalt",  6.29,  "KCl"),
             "mgo":   ("rocksalt",  4.21,  "MgO"),
             "cao":   ("rocksalt",  4.80,  "CaO"),
+            "feo":   ("rocksalt",  4.33,  "FeO"),
             "tio2":  None,   # rutile — complex, fallback to Atoms
-            "fe2o3": None,   # corundum — complex, fallback to Atoms
-            "al2o3": None,
             "sic":   ("zincblende", 4.36, "SiC"),
             "gaas":  ("zincblende", 5.65, "GaAs"),
             "gap":   ("zincblende", 5.45, "GaP"),
             "inp":   ("zincblende", 5.87, "InP"),
         }
         key = formula.lower().replace(" ", "")
+        
+        # Special cases for Corundum structures
+        if key == "fe2o3":
+            from ase.spacegroup import crystal
+            return crystal(['Fe', 'O'], basis=[(0, 0, 0.355), (0.306, 0, 0.25)], 
+                           spacegroup=167, cellpar=[5.038, 5.038, 13.772, 90, 90, 120])
+        elif key == "al2o3":
+            from ase.spacegroup import crystal
+            return crystal(['Al', 'O'], basis=[(0, 0, 0.352), (0.306, 0, 0.25)], 
+                           spacegroup=167, cellpar=[4.75, 4.75, 12.99, 90, 90, 120])
+        
         if key in COMPOUND_CRYSTALS and COMPOUND_CRYSTALS[key] is not None:
             struct, a, sym = COMPOUND_CRYSTALS[key]
             return bulk(sym, struct, a=a)
@@ -903,6 +969,14 @@ class MatterSimApp(ctk.CTk):
                 element = molecule_name
                 phase = "molecule"
                 formula = molecule_name
+            elif selection == "upload":
+                if not self.uploaded_file_path:
+                    raise ValueError("No file uploaded!")
+                from ase.io import read
+                atoms = read(self.uploaded_file_path)
+                element = os.path.basename(self.uploaded_file_path).split('.')[0]
+                phase = "upload"
+                formula = atoms.get_chemical_formula()
             else:
                 formula = self.formula_entry.get().strip()
                 if not formula:
@@ -1080,6 +1154,19 @@ class MatterSimApp(ctk.CTk):
                 result["mu_dopant"] = mu_dopant
                 result["defect_type"] = defect_type
                 result["dopant"] = dopant
+
+            elif mode == "Thermal Conductivity":
+                import os
+                work_dir = f"./bte_tc_{element}_{phase}"
+                if not os.path.exists(work_dir):
+                    os.makedirs(work_dir)
+                T = float(params.get("tc_temp", 300))
+                sc_size = int(params.get("tc_sc", 2))
+                q_mesh = int(params.get("tc_qmesh", 20))
+                
+                success, final_dir = engine.run_thermal_conductivity_bte(atoms, work_dir, T=T, sc_size=sc_size, q_mesh=q_mesh)
+                result["success"] = success
+                result["dir"] = final_dir
 
             # Send result to main thread
             self.task_queue.put({"status": "success", "data": result})
@@ -1354,6 +1441,12 @@ class MatterSimApp(ctk.CTk):
             self.defect_textbox.insert("1.0", msg)
 
     def _safe_exit(self):
+        try:
+            if hasattr(self, 'stdout_redirector') and self.stdout_redirector:
+                sys.stdout = self.stdout_redirector.original_stdout
+        except:
+            pass
+            
         if self.is_running:
             if messagebox.askokcancel("Quit", "Calculations running! Force quit?"):
                 self.destroy()

@@ -45,10 +45,17 @@ def run_equilibrium_scan(atoms, pct_range, npts):
     cell0 = atoms.get_cell().copy()
     atoms.calc = MatterSimCalculator(load_path="MatterSim-v1.0.0-5M.pth", device=device)
 
+    import time
+    start_time = time.time()
     for i, s in enumerate(scale_factors):
         atoms.set_cell(cell0 * s, scale_atoms=True)  # Scale uniformly
         energies[i] = atoms.get_potential_energy()
+        progress = (i + 1) / npts * 100
+        elapsed = time.time() - start_time
+        eta = elapsed / (i + 1) * (npts - i - 1)
+        print(f"[ {progress:>5.1f}%] STEP {i+1}/{npts} | ETA: {eta:>5.1f}s", end='\r', flush=True)
 
+    print("\n")
     # Restore original cell
     atoms.set_cell(cell0, scale_atoms=True)
     return a_vals, energies
@@ -70,6 +77,7 @@ def run_equation_of_state(atoms, pct_range=0.04, npts=15):
     
     # 1. Important step: Optimize the entire structure (both a and c for HCP) at P=0 before scanning
     # This ensures the c/a ratio is most accurate and the E-V curve will be absolutely smooth.
+    print("Status: Optimizing base cell structure at P=0...")
     opt = LBFGS(ExpCellFilter(atoms), logfile=None)
     opt.run(fmax=0.01, steps=50)
         
@@ -80,11 +88,19 @@ def run_equation_of_state(atoms, pct_range=0.04, npts=15):
     cell0 = atoms.get_cell().copy()
 
     # 2. Isotropic volume scanning (Isotropic Scaling)
+    import time
+    start_time = time.time()
     for i, s in enumerate(scale_factors):
         atoms.set_cell(cell0 * s, scale_atoms=True)
         # SKIP RELAXATION INSIDE THE LOOP TO AVOID NOISE FOR FITTING FUNCTION
         energies[i] = atoms.get_potential_energy()
         volumes[i] = atoms.get_volume()
+        progress = (i + 1) / npts * 100
+        elapsed = time.time() - start_time
+        eta = elapsed / (i + 1) * (npts - i - 1)
+        print(f"[ {progress:>5.1f}%] STEP {i+1}/{npts} | ETA: {eta:>5.1f}s", end='\r', flush=True)
+
+    print("\n")
 
     atoms.set_cell(cell0, scale_atoms=True)  # restore
 
@@ -108,6 +124,7 @@ def run_relaxation(atoms, verbose=False, is_molecule=False):
     from ase.optimize import BFGS
     atoms.calc = MatterSimCalculator(load_path="MatterSim-v1.0.0-5M.pth", device=device)
     
+    print("Status: Starting structural relaxation...")
     with contextlib.redirect_stdout(sys.stdout if verbose else io.StringIO()):
         if is_molecule:
             # For molecules, use BFGS directly on atoms to ONLY relax positions.
@@ -1016,4 +1033,69 @@ def run_defect_analysis(atoms, defect_type, supercell_size=3, dopant_element=Non
     print(f"{'-'*60}\n")
     
     return E_f, E_perfect, E_defect, mu_host, mu_dopant, perfect_sc, defective_sc
+
+def run_thermal_conductivity_bte(atoms, work_dir, T=300, sc_size=2, q_mesh=11):
+    """
+    Calculate Lattice Thermal Conductivity using BTEWorkflow (phono3py + MatterSim).
+    """
+    import os
+    import numpy as np
+    from mattersim.applications.bte import BTEWorkflow
+    
+    os.makedirs(work_dir, exist_ok=True)
+    
+    print(f"\n{'='*60}")
+    print(f"  BTE THERMAL CONDUCTIVITY (T={T}K)")
+    print(f"{'='*60}")
+    
+    # 1. Initialize Calculator
+    atoms.calc = MatterSimCalculator(load_path="MatterSim-v1.0.0-5M.pth", device=device)
+    
+    # Define sizes
+    sc_matrix = np.diag([sc_size, sc_size, sc_size])
+    qpoints = np.array([q_mesh, q_mesh, q_mesh])
+    
+    # 2. Setup BTE Workflow
+    bte_flow = BTEWorkflow(
+        atoms=atoms,
+        work_dir=work_dir,
+        method="RTA",
+        tmin=T,
+        tmax=T,
+        tstep=50,
+        supercell_matrix=sc_matrix,
+        qpoints_mesh=qpoints,
+        save_fcs=True
+    )
+    
+    # 3. Run Calculation
+    print(f"[*] Starting BTE workflow... (This might take a while)")
+    try:
+        bte_dir, ph3 = bte_flow.run()
+        print(f"[*] BTE workflow finished. Getting results...")
+        
+        # 4. Extract Kappa and Plot
+        # To avoid Tkinter matplotlib thread deadlocks on Windows, run this in a subprocess
+        import subprocess
+        script = f"""
+import matplotlib
+matplotlib.use('Agg')
+from mattersim.applications.bte import BTEWorkflow
+import sys
+try:
+    BTEWorkflow.get_kappa(work_dir=r'{bte_dir}')
+except Exception as e:
+    print(e, file=sys.stderr)
+    sys.exit(1)
+"""
+        res = subprocess.run([sys.executable, "-c", script], capture_output=True, text=True)
+        if res.returncode != 0:
+            raise RuntimeError(f"An error occurred during postprocess: {res.stderr}")
+
+        print(f"[*] Results saved in {bte_dir}")
+        return True, bte_dir
+    except BaseException as e:
+        print(f"\n[!] BTE Workflow Error: {e}")
+        print("[!] Note: If you see 'chunk size must be non-zero' panic, it is a known bug in phono3py 4.1.0 Rust extension on Windows.")
+        return False, str(e)
 
