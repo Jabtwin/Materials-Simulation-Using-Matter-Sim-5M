@@ -7,3 +7,5 @@ loguru
 customtkinter
 pillow
 mattersim
+mendeleev
+thermo
