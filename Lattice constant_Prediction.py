@@ -44,7 +44,8 @@ MODE_COMPATIBILITY = {
     ],
     "compound": [
         # Compounds (e.g. NaCl): EOS, relaxation, thermodynamics valid
-        "3D Viewer", "Equilibrium Scan", "Equation of State", "Relaxation", "Tensile Test", "Thermodynamics", "Vapor Pressure", "Defect Analysis"
+        "3D Viewer", "Equilibrium Scan", "Equation of State", "Relaxation", "Tensile Test", 
+        "Phonon", "Molecular Dynamics", "Diffusion", "Thermodynamics", "Vapor Pressure", "Defect Analysis"
     ],
     "upload": ALL_MODES, # Allow all modes for custom uploaded structures
 }
