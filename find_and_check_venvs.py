@@ -4,14 +4,15 @@ import sys
 
 def main():
     print("=" * 60)
-    print("TÌM KIẾM CÁC MÔI TRƯỜNG ẢO (VIRTUAL ENVIRONMENTS)")
-    print("Quá trình này có thể mất vài phút. Vui lòng chờ...")
+    print("SEARCHING FOR VIRTUAL ENVIRONMENTS...")
+    print("This script ONLY searches and checks. It does NOT install anything.")
+    print("This process may take a few minutes. Please wait...")
     print("=" * 60)
 
-    # Bắt đầu tìm từ thư mục User hiện tại (ví dụ C:\Users\hm-gpham)
+    # Start searching from the current User directory (e.g., C:\Users\hm-gpham)
     user_dir = os.environ.get("USERPROFILE", "C:\\")
     
-    # Bỏ qua các thư mục hệ thống hoặc quá nặng để quét nhanh hơn
+    # Skip system or heavy directories to speed up the search
     exclude_dirs = {
         'AppData', 'Application Data', 'Local Settings', 'Windows', 
         'Program Files', 'Program Files (x86)', '.cache', 'node_modules',
@@ -20,62 +21,62 @@ def main():
     
     found_venvs = []
     
-    print(f"Đang quét thư mục: {user_dir}")
+    print(f"Scanning directory: {user_dir}")
     
-    # Quét các thư mục
+    # Walk through the directories
     for root, dirs, files in os.walk(user_dir):
-        # Lọc bỏ các thư mục không cần thiết
+        # Filter out unwanted directories
         dirs[:] = [d for d in dirs if d not in exclude_dirs]
         
         for d in dirs:
-            # Tìm các thư mục có tên thường dùng cho môi trường ảo
+            # Look for common virtual environment folder names
             if d.lower() in ['.venv', 'venv', 'env', 'mattersim_env']:
                 venv_path = os.path.join(root, d)
                 python_exe = os.path.join(venv_path, "Scripts", "python.exe")
-                # Nếu có file python.exe bên trong Scripts thì đích thị là venv
+                # If python.exe exists inside Scripts, it is a valid venv
                 if os.path.exists(python_exe):
                     found_venvs.append(venv_path)
 
     if not found_venvs:
-        print("\n[!] Không tìm thấy môi trường ảo nào (không có thư mục .venv, venv).")
-        input("Nhấn Enter để thoát...")
+        print("\n[!] No virtual environments (.venv, venv) were found.")
+        input("Press Enter to exit...")
         return
 
-    print(f"\n[OK] Đã tìm thấy {len(found_venvs)} môi trường ảo!")
+    print(f"\n[OK] Found {len(found_venvs)} virtual environment(s)!")
     print("-" * 60)
     
     best_venv = None
 
     for venv in found_venvs:
-        print(f"\nĐang kiểm tra: {venv}")
+        print(f"\nChecking environment: {venv}")
         python_exe = os.path.join(venv, "Scripts", "python.exe")
         
-        # Thử xem có thư viện mattersim không
+        # Check if mattersim library exists without installing anything
         try:
             result = subprocess.run(
                 [python_exe, "-c", "import mattersim; print('MATTERSIM_FOUND')"],
                 capture_output=True, text=True, timeout=10
             )
             if "MATTERSIM_FOUND" in result.stdout:
-                print("  => [HOÀN HẢO] Môi trường này CÓ cài đặt mattersim!")
+                print("  => [PERFECT] 'mattersim' is installed in this environment!")
                 best_venv = venv
             else:
-                print("  => [KHÔNG CÓ] Môi trường này KHÔNG có mattersim.")
+                print("  => [MISSING] 'mattersim' is NOT in this environment.")
         except Exception as e:
-            print("  => [LỖI] Không thể kiểm tra môi trường này.")
+            print("  => [ERROR] Could not verify this environment.")
 
     print("\n" + "=" * 60)
     if best_venv:
-        print("KẾT LUẬN: ĐÃ TÌM THẤY MÔI TRƯỜNG ẢO CHUẨN CỦA DỰ ÁN!")
-        print(f"Đường dẫn: {best_venv}")
-        print("\nĐể sử dụng nó, bạn hãy gõ lệnh sau vào PowerShell:")
+        print("CONCLUSION: FOUND THE CORRECT PROJECT VIRTUAL ENVIRONMENT!")
+        print(f"Path: {best_venv}")
+        print("\nTo use it, copy and run the following command in PowerShell:")
         print(f"& '{best_venv}\\Scripts\\Activate.ps1'")
     else:
-        print("KẾT LUẬN: Các môi trường ảo tìm được đều chưa cài mattersim.")
-        print("Bạn sẽ cần cài đặt lại các thư viện cho thư mục bạn muốn.")
+        print("CONCLUSION: None of the found environments have 'mattersim'.")
+        print("You will need to install the libraries in your chosen environment.")
     print("=" * 60)
     
-    input("Nhấn Enter để kết thúc...")
+    input("Press Enter to exit...")
 
 if __name__ == "__main__":
     main()
