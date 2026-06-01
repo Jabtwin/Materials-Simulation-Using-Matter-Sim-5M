@@ -13,9 +13,11 @@ exit /b
 :: Change directory to current script path
 cd /d "%~dp0"
 
-:: 1. Smart Python detection
+:: 1. Smart Python detection (check .venv first!)
 set "PYTHON_EXE=python"
-if exist "C:\Users\Admin\AppData\Local\Python\bin\python.exe" (
+if exist ".\.venv\Scripts\python.exe" (
+    set "PYTHON_EXE=.\.venv\Scripts\python.exe"
+) else if exist "C:\Users\Admin\AppData\Local\Python\bin\python.exe" (
     set "PYTHON_EXE=C:\Users\Admin\AppData\Local\Python\bin\python.exe"
 ) else (
     where py >nul 2>&1
